@@ -1,13 +1,14 @@
 .about {
-  padding: 60px 120px;
+  padding: 105px 120px;
   background-color: #303040;
+  overflow: hidden;
 
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 40px;
 
-    p {
+    .about-talk {
       color: #b9b9cb;
       margin-top: 15px;
       max-width: 500px;
@@ -16,5 +17,22 @@
         font-style: normal;
       }
     }
+  }
+}
+
+@media screen and(max-width:1280px) {
+  .about {
+    .grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 100px;
+    }
+  }
+}
+
+@media screen and(max-width:580px) {
+  .about {
+    padding: 80px 25px;
   }
 }

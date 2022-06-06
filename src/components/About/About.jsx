@@ -1,5 +1,6 @@
 import React from "react";
 import SectionHeading from "../SectionHeading/SectionHeading";
+import Slider from "../Slider/Slider";
 
 function About() {
   return (
@@ -23,7 +24,7 @@ function About() {
               />
             </svg>
           </SectionHeading>
-          <p>
+          <p className="about-talk">
             My name is <em>Akpeti Trust</em> and I'm a{" "}
             <em>fullstack software developer</em>. I enjoy designing and
             building beautiful products, which could be anything from web apps
@@ -31,6 +32,7 @@ function About() {
             React and Laravel. I'm always learning.
           </p>
         </section>
+        <Slider />
       </div>
     </section>
   );

@@ -13,7 +13,7 @@ function Typer() {
 
   const delayAnimation = (delay) => {
     setTimeout(() => {
-      setDelay(150);
+      setDelay(120);
     }, delay);
   };
 
