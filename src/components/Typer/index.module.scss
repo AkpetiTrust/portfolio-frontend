@@ -1,0 +1,27 @@
+.typer {
+  font-family: "Roboto Mono", monospace;
+  margin-top: 120px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 14px;
+  width: fit-content;
+  padding-right: 5px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 2px;
+    background-color: #fff;
+    animation: shine 0.7s infinite alternate;
+  }
+}
+
+@keyframes shine {
+  to {
+    opacity: 0.2;
+  }
+}

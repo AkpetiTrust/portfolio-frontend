@@ -1,0 +1,37 @@
+.typer {
+  font-family: "Roboto Mono", monospace;
+  margin-top: 120px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 14px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-right: 5px;
+  position: relative;
+}
+
+.typer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 2px;
+  background-color: #fff;
+  -webkit-animation: shine 0.7s infinite alternate;
+          animation: shine 0.7s infinite alternate;
+}
+
+@-webkit-keyframes shine {
+  to {
+    opacity: 0.2;
+  }
+}
+
+@keyframes shine {
+  to {
+    opacity: 0.2;
+  }
+}
+/*# sourceMappingURL=index.module.css.map */

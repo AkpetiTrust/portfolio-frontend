@@ -1,0 +1,29 @@
+.nav {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    a {
+      all: unset;
+      cursor: pointer;
+      color: #f1f1f3;
+      font-size: 13px;
+      transition: color 0.4s, transform 0.4s;
+      display: inline-block;
+    }
+
+    &:hover {
+      a {
+        color: hsl(240, 8%, 55%);
+
+        &:hover {
+          color: #fff;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}

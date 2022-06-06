@@ -1,13 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800;900&family=Roboto+Mono:wght@400;500;600&display=swap");
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Poppins", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
+.hero {
+  height: 100vh;
+  position: relative;
+  background-color: #181820;
+  padding: 20px 70px;
+  overflow: hidden;
+}
+
+.hero .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+.hero .grid h1 {
+  color: #fff;
+  font-size: 35px;
+}
+
+.hero .grid h1 span {
+  color: #7c99df;
+}
+
+.hero .grid .subtitle {
+  color: #c5c5d3;
+  margin: 25px 0;
+  font-size: 15px;
+  max-width: 80%;
+}
+
+.hero .grid .image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.hero .grid figure {
+  max-width: 450px;
+}
+
+.hero .grid figure svg {
+  max-width: 100%;
+}
+/*# sourceMappingURL=index.css.map */

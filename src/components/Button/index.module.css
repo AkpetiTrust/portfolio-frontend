@@ -1,0 +1,11 @@
+.button {
+  all: unset;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  padding: 8px 25px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+/*# sourceMappingURL=index.module.css.map */

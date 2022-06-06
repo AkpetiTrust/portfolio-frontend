@@ -1,0 +1,40 @@
+.hero {
+  height: 100vh;
+  position: relative;
+  background-color: #181820;
+  padding: 20px 70px;
+  overflow: hidden;
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+
+    h1 {
+      color: #fff;
+      font-size: 35px;
+      span {
+        color: #7c99df;
+      }
+    }
+
+    .subtitle {
+      color: #c5c5d3;
+      margin: 25px 0;
+      font-size: 15px;
+      max-width: 80%;
+    }
+
+    .image {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    figure {
+      max-width: 450px;
+      svg {
+        max-width: 100%;
+      }
+    }
+  }
+}
