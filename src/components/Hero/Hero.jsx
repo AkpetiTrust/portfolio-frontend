@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../Button/Button";
 import HeroImage from "../HeroImage/HeroImage";
 import Nav from "../Nav/Nav";
+import Shapes from "../Shapes/Shapes";
 import Typer from "../Typer/Typer";
 
 function Hero() {
@@ -27,6 +28,7 @@ function Hero() {
           </figure>
         </div>
       </section>
+      <Shapes />
     </section>
   );
 }

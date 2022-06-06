@@ -1,0 +1,21 @@
+.shapes {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -50px;
+  overflow: hidden;
+  height: 180px;
+
+  svg {
+    position: absolute;
+    width: 100px;
+
+    &:first-child {
+      left: -20px;
+    }
+
+    &:last-child {
+      right: -20px;
+    }
+  }
+}

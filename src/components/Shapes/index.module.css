@@ -1,0 +1,22 @@
+.shapes {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -50px;
+  overflow: hidden;
+  height: 180px;
+}
+
+.shapes svg {
+  position: absolute;
+  width: 100px;
+}
+
+.shapes svg:first-child {
+  left: -20px;
+}
+
+.shapes svg:last-child {
+  right: -20px;
+}
+/*# sourceMappingURL=index.module.css.map */

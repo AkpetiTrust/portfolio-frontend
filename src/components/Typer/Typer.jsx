@@ -22,7 +22,8 @@ function Typer() {
   }, []);
 
   useInterval(() => {
-    let aboutToDelete = words[activeWordIndex] === "-";
+    let deleteMarker = "-";
+    let aboutToDelete = words[activeWordIndex] === deleteMarker;
 
     if (aboutToDelete) {
       setIsDeleting(true);

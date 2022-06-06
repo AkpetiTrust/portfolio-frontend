@@ -3,12 +3,11 @@
   position: relative;
   background-color: #181820;
   padding: 20px 70px;
-  overflow: hidden;
 
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
+    column-gap: 30px;
 
     h1 {
       color: #fff;
@@ -34,6 +33,34 @@
       max-width: 450px;
       svg {
         max-width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and(max-width:970px) {
+  .hero {
+    .grid {
+      display: block;
+
+      .image {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and(max-width:580px) {
+  .hero {
+    padding: 20px;
+
+    .grid {
+      h1 {
+        font-size: 30px;
+      }
+
+      .subtitle {
+        max-width: unset;
       }
     }
   }

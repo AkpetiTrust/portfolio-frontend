@@ -12,12 +12,25 @@ body {
           box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 13px;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #202324;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #454a4d;
+  border-radius: 15px;
+}
+
 .hero {
   height: 100vh;
   position: relative;
   background-color: #181820;
   padding: 20px 70px;
-  overflow: hidden;
 }
 
 .hero .grid {
@@ -25,8 +38,8 @@ body {
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  -webkit-column-gap: 20px;
-          column-gap: 20px;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
 }
 
 .hero .grid h1 {
@@ -60,5 +73,51 @@ body {
 
 .hero .grid figure svg {
   max-width: 100%;
+}
+
+@media screen and (max-width: 970px) {
+  .hero .grid {
+    display: block;
+  }
+  .hero .grid .image {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .hero {
+    padding: 20px;
+  }
+  .hero .grid h1 {
+    font-size: 30px;
+  }
+  .hero .grid .subtitle {
+    max-width: unset;
+  }
+}
+
+.about {
+  padding: 60px 120px;
+  background-color: #303040;
+}
+
+.about .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 40px;
+          column-gap: 40px;
+}
+
+.about .grid p {
+  color: #b9b9cb;
+  margin-top: 15px;
+  max-width: 500px;
+}
+
+.about .grid p em {
+  color: #f0f0f4;
+  font-style: normal;
 }
 /*# sourceMappingURL=index.css.map */
