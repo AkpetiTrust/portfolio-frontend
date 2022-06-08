@@ -102,6 +102,7 @@ body {
 
 .about {
   padding: 105px 120px;
+  padding-bottom: 80px;
   background-color: #303040;
   overflow: hidden;
 }
@@ -145,6 +146,38 @@ body {
 @media screen and (max-width: 580px) {
   .about {
     padding: 80px 25px;
+  }
+}
+
+.services {
+  padding: 105px 120px;
+  background-color: #303040;
+}
+
+.services h2 svg {
+  display: inline-block;
+  -webkit-animation: rotate 4s linear infinite;
+          animation: rotate 4s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .services {
+    padding: 80px 25px;
+    padding-top: 0;
   }
 }
 /*# sourceMappingURL=index.css.map */

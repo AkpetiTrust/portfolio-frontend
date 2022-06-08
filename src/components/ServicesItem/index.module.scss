@@ -1,0 +1,21 @@
+.item {
+  list-style-type: none;
+  color: #dcdce5;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.3s;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+@media screen and(max-width:830px) {
+  .item {
+    position: static;
+    flex-shrink: 0;
+    width: 100%;
+  }
+}

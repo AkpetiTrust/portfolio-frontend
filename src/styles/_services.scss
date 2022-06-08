@@ -1,0 +1,22 @@
+.services {
+  padding: 105px 120px;
+  background-color: #303040;
+
+  h2 svg {
+    display: inline-block;
+    animation: rotate 4s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and(max-width:580px) {
+  .services {
+    padding: 80px 25px;
+    padding-top: 0;
+  }
+}

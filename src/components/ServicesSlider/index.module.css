@@ -1,0 +1,76 @@
+.slider {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 15px;
+}
+
+.slider > ul {
+  position: relative;
+}
+
+.slider > ul::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: calc(30px + 10px);
+  width: 3px;
+  background-color: #adadc2;
+  z-index: 1;
+}
+
+.slider .body {
+  overflow: hidden;
+}
+
+.slider .body ul {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+@media screen and (max-width: 830px) {
+  .slider {
+    display: block;
+    margin-top: 30px;
+  }
+  .slider > ul {
+    all: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 30px;
+    overflow: auto;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #5c5c7a;
+  }
+  .slider > ul::before {
+    display: none;
+  }
+  .slider > ul::-webkit-scrollbar {
+    height: 0;
+    border-radius: 0;
+  }
+  .slider > ul::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 0;
+  }
+  .slider > ul::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  .slider .body ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+/*# sourceMappingURL=index.module.css.map */
