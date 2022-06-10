@@ -1,16 +1,33 @@
 .services {
+  position: relative;
   padding: 105px 120px;
   background-color: #303040;
+  overflow: hidden;
 
   h2 svg {
     display: inline-block;
     animation: rotate 4s linear infinite;
+  }
+
+  .watermark {
+    position: absolute;
+    top: 10%;
+    max-width: 800px;
+    right: -10%;
   }
 }
 
 @keyframes rotate {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and(max-width:830px) {
+  .services {
+    .watermark {
+      display: none;
+    }
   }
 }
 

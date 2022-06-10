@@ -13,10 +13,10 @@ function Nav() {
           <a href="#about">ABOUT</a>
         </li>
         <li>
-          <a href="#">SERVICES</a>
+          <a href="#services">SERVICES</a>
         </li>
         <li>
-          <a href="#">STACK</a>
+          <a href="#stack">STACK</a>
         </li>
         <li>
           <a href="#">PROJECTS</a>

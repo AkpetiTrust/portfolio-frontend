@@ -150,14 +150,23 @@ body {
 }
 
 .services {
+  position: relative;
   padding: 105px 120px;
   background-color: #303040;
+  overflow: hidden;
 }
 
 .services h2 svg {
   display: inline-block;
   -webkit-animation: rotate 4s linear infinite;
           animation: rotate 4s linear infinite;
+}
+
+.services .watermark {
+  position: absolute;
+  top: 10%;
+  max-width: 800px;
+  right: -10%;
 }
 
 @-webkit-keyframes rotate {
@@ -174,10 +183,66 @@ body {
   }
 }
 
+@media screen and (max-width: 830px) {
+  .services .watermark {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 580px) {
   .services {
     padding: 80px 25px;
     padding-top: 0;
   }
+}
+
+.stack {
+  height: 100vh;
+  background-color: #181820;
+  padding: 30px 70px;
+  padding-top: 60px;
+  position: relative;
+}
+
+.stack .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 40px;
+          column-gap: 40px;
+  height: 490px;
+}
+
+.stack .grid .talk {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.stack .grid .talk h2 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.stack .grid .talk p {
+  color: #b9b9cb;
+  max-width: 400px;
+}
+
+.stack .grid .item-container {
+  position: relative;
+}
+
+.stack .watermark {
+  position: absolute;
+  bottom: 0;
+  font-size: 70px;
+  color: rgba(255, 255, 255, 0.05);
+  left: -40px;
+  font-weight: 700;
+  max-width: 500px;
+  line-height: 1.5em;
+  pointer-events: none;
 }
 /*# sourceMappingURL=index.css.map */

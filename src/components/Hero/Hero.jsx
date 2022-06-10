@@ -16,7 +16,7 @@ function Hero() {
             Making your life easier, one <span>application</span> at a time
           </h1>
           <p className="subtitle">
-            Heyy, Trust here, nice to meet you. I'm a fullstack developer based
+            Heyy, Trust here, nice to meet you. I'm a full stack developer based
             in Nigeria, I enjoy solving problems by building applications.
             Welcome to my small corner of the Internet.
           </p>

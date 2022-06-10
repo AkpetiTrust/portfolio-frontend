@@ -1,0 +1,42 @@
+.stack {
+  height: 100vh;
+  background-color: #181820;
+  padding: 30px 70px;
+  padding-top: 60px;
+  position: relative;
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    height: 490px;
+
+    .talk {
+      align-self: center;
+      h2 {
+        color: #fff;
+        margin-bottom: 10px;
+      }
+      p {
+        color: #b9b9cb;
+        max-width: 400px;
+      }
+    }
+
+    .item-container {
+      position: relative;
+    }
+  }
+
+  .watermark {
+    position: absolute;
+    bottom: 0;
+    font-size: 70px;
+    color: rgba($color: #fff, $alpha: 0.05);
+    left: -40px;
+    font-weight: 700;
+    max-width: 500px;
+    line-height: 1.5em;
+    pointer-events: none;
+  }
+}
