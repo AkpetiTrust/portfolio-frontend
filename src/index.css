@@ -251,8 +251,7 @@ body {
 
 .projects {
   background-color: #303040;
-  padding: 30px 70px;
-  padding-top: 50px;
+  padding: 50px 70px;
 }
 
 .projects .talk {
@@ -273,5 +272,11 @@ body {
 
 .projects a {
   margin-top: 40px;
+}
+
+.projects .currently {
+  color: #b9b9cb;
+  max-width: 480px;
+  margin-top: 30px;
 }
 /*# sourceMappingURL=index.css.map */

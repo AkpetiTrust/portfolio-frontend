@@ -4,6 +4,7 @@ import whotImage from "../../assets/whot.png";
 import cryptoImage from "../../assets/crypto.png";
 import Project from "../Project/Project";
 import Button from "../Button/Button";
+import Currently from "../Currently/Currently";
 
 function Projects() {
   const [projects, setProjects] = useState([
@@ -45,6 +46,7 @@ function Projects() {
       <Button to={"/archive"} isLink>
         SEE MORE
       </Button>
+      <Currently className="currently" />
     </section>
   );
 }

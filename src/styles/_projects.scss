@@ -1,7 +1,6 @@
 .projects {
   background-color: #303040;
-  padding: 30px 70px;
-  padding-top: 50px;
+  padding: 50px 70px;
 
   .talk {
     max-width: 400px;
@@ -22,5 +21,11 @@
 
   a {
     margin-top: 40px;
+  }
+
+  .currently {
+    color: #b9b9cb;
+    max-width: 480px;
+    margin-top: 30px;
   }
 }
