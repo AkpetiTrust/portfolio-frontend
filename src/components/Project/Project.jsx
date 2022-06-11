@@ -5,8 +5,13 @@ function Project({
   project: { img, title, live, github, description, technologies, roles },
   index,
 }) {
+  const toTwoDigits = (number) => {
+    number = number.toString();
+    return number.length === 1 ? "0" + number : number;
+  };
+
   return (
-    <div className={style.project}>
+    <div className={style.project} data-index={toTwoDigits(index + 1)}>
       <section className={style.top}>
         <p>{title}</p>
         <div className={style.icons}>

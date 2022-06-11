@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
 .project {
   padding: 65px 40px;
   display: -ms-grid;
@@ -11,6 +12,22 @@
           column-gap: 60px;
   background-color: #3d3d52;
   border-radius: 5px;
+  position: relative;
+  margin-bottom: 200px;
+}
+
+.project::before {
+  content: attr(data-index);
+  font-size: 130px;
+  line-height: 1em;
+  position: absolute;
+  z-index: -2;
+  right: -40px;
+  top: 0;
+  -webkit-transform: translateY(-90%);
+          transform: translateY(-90%);
+  color: #6c6c7a;
+  font-family: "Bungee Shade", cursive;
 }
 
 .project .image {
@@ -131,9 +148,9 @@
 .project .description .grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: max-content max-content;
-      grid-template-columns: -webkit-max-content -webkit-max-content;
-      grid-template-columns: max-content max-content;
+  -ms-grid-columns: max-content 1fr;
+      grid-template-columns: -webkit-max-content 1fr;
+      grid-template-columns: max-content 1fr;
   -webkit-column-gap: 20px;
           column-gap: 20px;
   row-gap: 10px;
@@ -155,5 +172,27 @@
   gap: 15px;
   color: #b9b9cb;
   font-family: "Roboto Mono", monospace;
+}
+
+.project:nth-child(even) .image {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/ 3;
+}
+
+.project:nth-child(even) .top,
+.project:nth-child(even) .description {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+}
+
+.project:nth-child(even)::before {
+  right: unset;
+  left: -40px;
+}
+
+.project:last-child {
+  margin-bottom: 0;
 }
 /*# sourceMappingURL=index.module.css.map */

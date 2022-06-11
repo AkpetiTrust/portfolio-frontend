@@ -11,5 +11,16 @@
 
   .projects-container {
     margin-top: 70px;
+    /*  
+        Just to give stacking context so that
+        the ::before of the projects work
+    */
+
+    position: relative;
+    z-index: 1;
+  }
+
+  a {
+    margin-top: 40px;
   }
 }

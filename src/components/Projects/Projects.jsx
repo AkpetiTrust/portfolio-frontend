@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import SectionHeading from "../SectionHeading/SectionHeading";
 import whotImage from "../../assets/whot.png";
+import cryptoImage from "../../assets/crypto.png";
 import Project from "../Project/Project";
+import Button from "../Button/Button";
 
 function Projects() {
   const [projects, setProjects] = useState([
@@ -13,6 +15,16 @@ function Projects() {
       description:
         "A game of WHOT built with ReactJS. It's a game where you play against an AI. A multiplayer version is in development😗.",
       technologies: ["React", "Redux"],
+      roles: ["UI Design", "Front-end"],
+    },
+    {
+      img: cryptoImage,
+      title: "EXCHANGE APP",
+      live: "https://exchange-app.trust-akpeti.com",
+      github: "https://github.com/AkpetiTrust/exchange_app",
+      description:
+        "A web app that shows the latest prices for various cryptocurrency coins. You can also convert the value of one coin to another, it was built using ReactJS.",
+      technologies: ["React"],
       roles: ["UI Design", "Front-end"],
     },
   ]);
@@ -30,6 +42,9 @@ function Projects() {
           <Project project={project} key={project.title} index={index} />
         ))}
       </section>
+      <Button to={"/archive"} isLink>
+        SEE MORE
+      </Button>
     </section>
   );
 }

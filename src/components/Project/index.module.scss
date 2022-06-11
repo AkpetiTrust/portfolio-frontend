@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
+
 .project {
   padding: 65px 40px;
   display: grid;
@@ -6,6 +8,21 @@
   column-gap: 60px;
   background-color: #3d3d52;
   border-radius: 5px;
+  position: relative;
+  margin-bottom: 200px;
+
+  &::before {
+    content: attr(data-index);
+    font-size: 130px;
+    line-height: 1em;
+    position: absolute;
+    z-index: -2;
+    right: -40px;
+    top: 0;
+    transform: translateY(-90%);
+    color: #6c6c7a;
+    font-family: "Bungee Shade", cursive;
+  }
 
   .image {
     grid-column: 1 / 2;
@@ -93,7 +110,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: max-content max-content;
+      grid-template-columns: max-content 1fr;
       column-gap: 20px;
       row-gap: 10px;
       margin-top: 20px;
@@ -112,5 +129,25 @@
         font-family: "Roboto Mono", monospace;
       }
     }
+  }
+
+  &:nth-child(even) {
+    .image {
+      grid-column: 2/ 3;
+    }
+
+    .top,
+    .description {
+      grid-column: 1 / 2;
+    }
+
+    &::before {
+      right: unset;
+      left: -40px;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }

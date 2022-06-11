@@ -114,6 +114,9 @@ body {
       grid-template-columns: 1fr 1fr;
   -webkit-column-gap: 40px;
           column-gap: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .about .grid .about-talk {
@@ -260,5 +263,15 @@ body {
 
 .projects .projects-container {
   margin-top: 70px;
+  /*  
+        Just to give stacking context so that
+        the ::before of the projects work
+    */
+  position: relative;
+  z-index: 1;
+}
+
+.projects a {
+  margin-top: 40px;
 }
 /*# sourceMappingURL=index.css.map */
