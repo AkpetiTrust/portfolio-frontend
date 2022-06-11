@@ -245,4 +245,20 @@ body {
   line-height: 1.5em;
   pointer-events: none;
 }
+
+.projects {
+  background-color: #303040;
+  padding: 30px 70px;
+  padding-top: 50px;
+}
+
+.projects .talk {
+  max-width: 400px;
+  color: #b9b9cb;
+  margin-top: 13px;
+}
+
+.projects .projects-container {
+  margin-top: 70px;
+}
 /*# sourceMappingURL=index.css.map */

@@ -1,5 +1,5 @@
 import React from "react";
-import { About, Hero, Services, Stack } from "../../components";
+import { About, Hero, Projects, Services, Stack } from "../../components";
 
 function Home() {
   return (
@@ -8,6 +8,7 @@ function Home() {
       <About />
       <Services />
       <Stack />
+      <Projects />
     </>
   );
 }

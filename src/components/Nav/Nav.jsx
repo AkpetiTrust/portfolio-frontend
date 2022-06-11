@@ -19,7 +19,7 @@ function Nav() {
           <a href="#stack">STACK</a>
         </li>
         <li>
-          <a href="#">PROJECTS</a>
+          <a href="#projects">PROJECTS</a>
         </li>
         <li>
           <a href="#">CONTACT</a>
