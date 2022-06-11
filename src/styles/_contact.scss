@@ -1,0 +1,20 @@
+.contact {
+  background-color: #181820;
+  padding: 30px 70px;
+  padding-top: 80px;
+  position: relative;
+
+  .grid {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    color: #b9b9cb;
+
+    .info {
+      p {
+        max-width: 380px;
+      }
+    }
+  }
+}

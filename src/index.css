@@ -279,4 +279,26 @@ body {
   max-width: 480px;
   margin-top: 30px;
 }
+
+.contact {
+  background-color: #181820;
+  padding: 30px 70px;
+  padding-top: 80px;
+  position: relative;
+}
+
+.contact .grid {
+  margin-top: 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 40px;
+          column-gap: 40px;
+  color: #b9b9cb;
+}
+
+.contact .grid .info p {
+  max-width: 380px;
+}
 /*# sourceMappingURL=index.css.map */
