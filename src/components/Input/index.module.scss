@@ -1,0 +1,35 @@
+.input_container {
+  position: relative;
+  z-index: 1;
+
+  input {
+    height: 25px;
+  }
+
+  input {
+    all: unset;
+    cursor: text;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      border-bottom-color: #fffd77;
+      & + label {
+        transform: translateY(-25px) scale(0.8);
+        color: #fffd77;
+      }
+    }
+  }
+
+  label {
+    color: #b9b9cb;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    z-index: -1;
+    transition: transform 0.3s, color 0.3s;
+    transform: translateY(0) scale(1);
+    transform-origin: left;
+  }
+}

@@ -43,7 +43,7 @@ function Projects() {
           <Project project={project} key={project.title} index={index} />
         ))}
       </section>
-      <Button to={"/archive"} isLink>
+      <Button className="btn" to={"/archive"} isLink>
         SEE MORE
       </Button>
       <Currently className="currently" />

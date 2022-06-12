@@ -1,0 +1,22 @@
+.container textarea {
+  all: unset;
+  cursor: text;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  min-height: 120px;
+}
+
+.container textarea:focus {
+  border-color: #fffd77;
+}
+
+.container label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #b9b9cb;
+}
+/*# sourceMappingURL=index.module.css.map */

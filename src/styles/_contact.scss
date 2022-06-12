@@ -12,8 +12,29 @@
     color: #b9b9cb;
 
     .info {
-      p {
+      & > p {
         max-width: 380px;
+      }
+
+      .info-items {
+        margin-top: 35px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+      }
+    }
+
+    form {
+      .grid {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        grid-template-rows: 25px 1fr;
+        column-gap: 60px;
+        row-gap: 40px;
+
+        div:last-child {
+          grid-column: 1 / 3;
+        }
       }
     }
   }

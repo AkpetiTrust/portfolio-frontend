@@ -1,0 +1,42 @@
+.input_container {
+  position: relative;
+  z-index: 1;
+}
+
+.input_container input {
+  height: 25px;
+}
+
+.input_container input {
+  all: unset;
+  cursor: text;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+
+.input_container input:focus, .input_container input:not(:placeholder-shown) {
+  border-bottom-color: #fffd77;
+}
+
+.input_container input:focus + label, .input_container input:not(:placeholder-shown) + label {
+  -webkit-transform: translateY(-25px) scale(0.8);
+          transform: translateY(-25px) scale(0.8);
+  color: #fffd77;
+}
+
+.input_container label {
+  color: #b9b9cb;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  z-index: -1;
+  -webkit-transition: color 0.3s, -webkit-transform 0.3s;
+  transition: color 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, color 0.3s;
+  transition: transform 0.3s, color 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: translateY(0) scale(1);
+          transform: translateY(0) scale(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+/*# sourceMappingURL=index.module.css.map */

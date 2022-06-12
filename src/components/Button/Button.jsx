@@ -8,6 +8,7 @@ function Button({
   children,
   isLink,
   to,
+  className,
 }) {
   const ContainerComponent = isLink
     ? (props) => (
@@ -19,7 +20,7 @@ function Button({
 
   return (
     <ContainerComponent
-      className={style.button}
+      className={`${style.button} ${className}`}
       style={{ color, border: `1px solid ${borderColor}` }}
     >
       {children}
