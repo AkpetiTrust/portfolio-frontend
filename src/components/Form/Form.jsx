@@ -12,7 +12,7 @@ function Form() {
     <form>
       <div className="form-grid">
         <Input
-          label={"Name"}
+          label={"Name:"}
           type="text"
           name="name"
           value={name}
@@ -20,7 +20,7 @@ function Form() {
           key="name"
         />
         <Input
-          label={"Email"}
+          label={"Email:"}
           type="email"
           name="email"
           value={email}
@@ -28,7 +28,7 @@ function Form() {
           key="email"
         />
         <TextArea
-          label={"Message"}
+          label={"Message:"}
           name="message"
           setValue={setMessage}
           key="message"

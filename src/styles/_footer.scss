@@ -1,0 +1,40 @@
+.footer {
+  background-color: #181820;
+  padding: 50px 30px;
+
+  .caption {
+    letter-spacing: 0.18em;
+    font-size: 22px;
+    color: #b9b9cb;
+    text-align: center;
+    span {
+      font-weight: 700;
+      color: #fff;
+    }
+  }
+
+  hr {
+    margin: 50px auto;
+    width: 90%;
+    border: none;
+    border-top: 1px solid #fff;
+  }
+
+  .credits {
+    color: #b9b9cb;
+    text-align: center;
+    letter-spacing: 0.07em;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    margin-top: 50px;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

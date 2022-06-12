@@ -2,6 +2,7 @@ import React from "react";
 import {
   About,
   Contact,
+  Footer,
   Hero,
   Projects,
   Services,
@@ -17,6 +18,7 @@ function Home() {
       <Stack />
       <Projects />
       <Contact />
+      <Footer />
     </>
   );
 }
