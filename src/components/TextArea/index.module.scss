@@ -1,6 +1,7 @@
 .container {
   textarea {
     all: unset;
+    box-sizing: border-box;
     cursor: text;
     border: 1px solid #fff;
     border-radius: 5px;

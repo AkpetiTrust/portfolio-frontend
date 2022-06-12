@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../Button/Button";
 import Input from "../Input/Input";
 import TextArea from "../TextArea/TextArea";
 
@@ -9,7 +10,7 @@ function Form() {
 
   return (
     <form>
-      <div className="grid">
+      <div className="form-grid">
         <Input
           label={"Name"}
           type="text"
@@ -33,6 +34,9 @@ function Form() {
           key="message"
         />
       </div>
+      <Button borderColor="#7C99DF" color="#fff">
+        SHOOT
+      </Button>
     </form>
   );
 }

@@ -8,5 +8,16 @@
   border-radius: 5px;
   font-size: 14px;
   font-weight: 600;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.button:hover {
+  -webkit-transform: translateX(10%);
+          transform: translateX(10%);
 }
 /*# sourceMappingURL=index.module.css.map */

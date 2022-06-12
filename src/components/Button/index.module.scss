@@ -7,4 +7,10 @@
   border-radius: 5px;
   font-size: 14px;
   font-weight: 600;
+  transition: transform 0.3s;
+  transform: translateX(0);
+
+  &:hover {
+    transform: translateX(10%);
+  }
 }

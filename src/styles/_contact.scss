@@ -1,7 +1,6 @@
 .contact {
   background-color: #181820;
-  padding: 30px 70px;
-  padding-top: 80px;
+  padding: 80px 70px;
   position: relative;
 
   .grid {
@@ -25,7 +24,9 @@
     }
 
     form {
-      .grid {
+      .form-grid {
+        all: unset;
+        box-sizing: border-box;
         display: grid;
         grid-template-columns: max-content max-content;
         grid-template-rows: 25px 1fr;
@@ -35,6 +36,39 @@
         div:last-child {
           grid-column: 1 / 3;
         }
+      }
+
+      button {
+        margin-top: 40px;
+        padding: 8px 50px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width:900px) {
+  .contact {
+    .inner {
+      width: fit-content;
+      margin: 0 auto;
+    }
+    .grid {
+      grid-template-columns: 1fr;
+      row-gap: 100px;
+    }
+  }
+}
+
+@media screen and(max-width:580px) {
+  .contact {
+    padding: 80px 25px;
+
+    .grid form .form-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 25px 25px 1fr;
+      row-gap: 70px;
+      div {
+        grid-column: 1 / 3;
       }
     }
   }
