@@ -1,7 +1,21 @@
 .nav {
   display: flex;
   width: 100%;
-  justify-content: flex-end;
+  justify-content: space-between;
+
+  .toggle {
+    position: relative;
+    z-index: 5;
+    display: none;
+  }
+
+  svg {
+    width: 50px;
+    height: auto;
+    position: relative;
+    z-index: 5;
+  }
+
   ul {
     list-style: none;
     display: flex;
@@ -17,12 +31,106 @@
 
     &:hover {
       a {
-        color: hsl(240, 8%, 55%);
+        color: #838395;
 
         &:hover {
           color: #fff;
           transform: scale(1.05);
         }
+      }
+    }
+  }
+}
+
+@media screen and(max-width:730px) {
+  .nav {
+    svg {
+      width: 40px;
+    }
+
+    .toggle {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 30px;
+      cursor: pointer;
+      flex-shrink: 0;
+      flex-grow: 0;
+
+      span,
+      &::before,
+      &::after {
+        background-color: #fff;
+        height: 3px;
+        display: inline-block;
+        transition: transform 0.4s;
+      }
+
+      span {
+        width: 100%;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        transform: scaleX(0.4);
+      }
+
+      &::before {
+        transform-origin: right;
+      }
+
+      &::after {
+        transform-origin: left;
+      }
+    }
+
+    ul {
+      flex-direction: column;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0f0f14;
+      z-index: 4;
+      align-items: center;
+      padding-top: 130px;
+      transform: translateY(-110%);
+      opacity: 0;
+      transition: transform 0.4s, opacity 0.4s;
+      gap: 25px;
+
+      a {
+        color: #b0b0bf;
+        font-size: 15px;
+      }
+
+      &:hover {
+        a {
+          color: #b0b0bf;
+        }
+      }
+    }
+
+    &.active {
+      .toggle {
+        span {
+          transform: scaleX(0);
+        }
+
+        &::before {
+          transform: translate(-3px, 27px) scaleX(1) rotate(45deg);
+        }
+
+        &::after {
+          transform: translate(5px, 9px) scaleX(1) rotate(-45deg);
+        }
+      }
+
+      ul {
+        transform: translateY(0);
+        opacity: 1;
       }
     }
   }

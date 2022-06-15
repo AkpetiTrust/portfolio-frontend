@@ -26,3 +26,9 @@
     opacity: 0.2;
   }
 }
+
+@media screen and(max-width:580px) {
+  .typer {
+    margin-top: 60px;
+  }
+}

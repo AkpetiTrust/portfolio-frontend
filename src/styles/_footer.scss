@@ -38,3 +38,16 @@
     }
   }
 }
+
+@media screen and(max-width:580px) {
+  .footer {
+    padding: 50px 18px;
+    .caption {
+      font-size: 20px;
+    }
+
+    hr {
+      margin: 40px auto;
+    }
+  }
+}

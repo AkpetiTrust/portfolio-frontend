@@ -34,7 +34,7 @@ body {
   height: 100vh;
   position: relative;
   background-color: #181820;
-  padding: 20px 70px;
+  padding: 40px 70px;
 }
 
 .hero .grid {
@@ -93,7 +93,7 @@ body {
     padding: 25px;
   }
   .hero .grid h1 {
-    font-size: 30px;
+    font-size: 28px;
   }
   .hero .grid .subtitle {
     max-width: unset;
@@ -419,5 +419,17 @@ body {
 .footer .icons svg {
   width: 20px;
   height: 20px;
+}
+
+@media screen and (max-width: 580px) {
+  .footer {
+    padding: 50px 18px;
+  }
+  .footer .caption {
+    font-size: 20px;
+  }
+  .footer hr {
+    margin: 40px auto;
+  }
 }
 /*# sourceMappingURL=index.css.map */
