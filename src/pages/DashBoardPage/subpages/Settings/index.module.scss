@@ -1,0 +1,60 @@
+.settings {
+  padding: 60px 100px;
+  color: #b9b9cb;
+
+  h3 {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    .textarea_container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    textarea {
+      all: unset;
+      box-sizing: border-box;
+      width: 300px;
+      border-radius: 7px;
+      height: 100%;
+      border: 1px solid #7b7b8e;
+      padding: 20px;
+    }
+
+    label {
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .input_group {
+      &:first-child {
+        margin-bottom: 45px;
+      }
+      input {
+        all: unset;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 6px;
+        background-color: #2d2d34;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .availability_container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  button {
+    margin-top: 90px;
+  }
+}

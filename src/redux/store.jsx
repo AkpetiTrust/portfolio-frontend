@@ -70,6 +70,7 @@ const store = createStore(
         id: 8,
       },
     ],
+    available: false,
   },
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );

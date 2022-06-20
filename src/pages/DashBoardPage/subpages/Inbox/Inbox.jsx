@@ -1,9 +1,8 @@
 import React from "react";
 import style from "./index.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Table } from "../../../../components";
+import { Button, Table, CheckBox } from "../../../../components";
 import { truncateWords } from "../../../../utils/functions";
-import CheckBox from "../../../../components/CheckBox/CheckBox";
 import {
   deleteSelectedMessages,
   selectMessage,

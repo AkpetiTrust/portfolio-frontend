@@ -6,7 +6,7 @@
   display: initial;
 }
 
-label {
+.box {
   --size: 20px;
   width: var(--size);
   height: var(--size);
@@ -24,7 +24,7 @@ label {
   cursor: pointer;
 }
 
-label svg {
+.box svg {
   width: 15px;
   display: none;
 }

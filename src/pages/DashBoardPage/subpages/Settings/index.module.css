@@ -1,0 +1,75 @@
+.settings {
+  padding: 60px 100px;
+  color: #b9b9cb;
+}
+
+.settings h3 {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.settings .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.settings .flex .textarea_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.settings .flex textarea {
+  all: unset;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 300px;
+  border-radius: 7px;
+  height: 100%;
+  border: 1px solid #7b7b8e;
+  padding: 20px;
+}
+
+.settings .flex label {
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.settings .flex .input_group:first-child {
+  margin-bottom: 45px;
+}
+
+.settings .flex .input_group input {
+  all: unset;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  padding: 6px;
+  background-color: #2d2d34;
+  border-radius: 5px;
+}
+
+.settings .availability_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+}
+
+.settings button {
+  margin-top: 90px;
+}
+/*# sourceMappingURL=index.module.css.map */
