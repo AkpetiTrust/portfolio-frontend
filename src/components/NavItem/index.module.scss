@@ -1,0 +1,32 @@
+.item {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 10px 0;
+  height: 44px;
+
+  a {
+    color: #bdbdc7;
+    text-decoration: none;
+  }
+
+  svg {
+    width: 18px;
+    height: auto;
+    path {
+      fill: #bdbdc7;
+    }
+  }
+
+  &.active {
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    font-weight: 600;
+
+    svg path {
+      fill: #fff;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.nav {
+  --padding-left: 50px;
+  background-color: #464653;
+  border-top-right-radius: 150px;
+  padding-top: 160px;
+  padding-left: var(--padding-left);
+  position: relative;
+}
+
+.nav > svg {
+  position: absolute;
+  left: var(--padding-left);
+  width: 40px;
+  height: auto;
+  top: 90px;
+}
+
+.nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 25px;
+  list-style-type: none;
+  position: relative;
+}
+
+.nav ul::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--padding-left) * -1);
+  top: 0;
+  width: 4px;
+  height: 44px;
+  background-color: #fff;
+  -webkit-transform: translateY(calc(var(--translate) + var(--gap-offset)));
+          transform: translateY(calc(var(--translate) + var(--gap-offset)));
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+/*# sourceMappingURL=index.module.css.map */

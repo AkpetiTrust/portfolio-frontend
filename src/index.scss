@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800;900&family=Roboto+Mono:wght@400;500;600&display=swap");
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -8,8 +9,7 @@ body {
 *::after {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
@@ -18,20 +18,17 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #202324;
+  background-color: rgb(32, 35, 36);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #454a4d;
+  background-color: rgb(69, 74, 77);
   border-radius: 15px;
 }
 
 .dashboard {
   height: 100vh;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 280px 1fr;
-      grid-template-columns: 280px 1fr;
+  grid-template-columns: 280px 1fr;
   background-color: #181820;
 }
-/*# sourceMappingURL=index.css.map */

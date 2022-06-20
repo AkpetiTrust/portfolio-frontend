@@ -1,0 +1,21 @@
+.logout {
+  text-decoration: none;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 50px;
+  bottom: 60px;
+  font-size: 14px;
+}
+
+.logout svg {
+  width: 18px;
+  height: auto;
+}
+/*# sourceMappingURL=index.module.css.map */

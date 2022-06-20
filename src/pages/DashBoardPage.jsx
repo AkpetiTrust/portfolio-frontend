@@ -1,7 +1,12 @@
 import React from "react";
+import { SideNav } from "../components";
 
 function DashBoardPage() {
-  return <section></section>;
+  return (
+    <section className="dashboard">
+      <SideNav></SideNav>
+    </section>
+  );
 }
 
 export default DashBoardPage;

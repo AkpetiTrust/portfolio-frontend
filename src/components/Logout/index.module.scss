@@ -1,0 +1,16 @@
+.logout {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  position: absolute;
+  left: 50px;
+  bottom: 60px;
+  font-size: 14px;
+
+  svg {
+    width: 18px;
+    height: auto;
+  }
+}

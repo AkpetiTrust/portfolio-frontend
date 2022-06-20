@@ -1,0 +1,36 @@
+.nav {
+  --padding-left: 50px;
+  background-color: #464653;
+  border-top-right-radius: 150px;
+  padding-top: 160px;
+  padding-left: var(--padding-left);
+  position: relative;
+
+  & > svg {
+    position: absolute;
+    left: var(--padding-left);
+    width: 40px;
+    height: auto;
+    top: 90px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    list-style-type: none;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: calc(var(--padding-left) * -1);
+      top: 0;
+      width: 4px;
+      height: 44px;
+      background-color: #fff;
+      transform: translateY(calc(var(--translate) + var(--gap-offset)));
+      transition: transform 0.3s;
+    }
+  }
+}
