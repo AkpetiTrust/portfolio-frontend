@@ -1,0 +1,14 @@
+.button {
+  all: unset;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  background-color: #4d4d5b;
+  padding: 8px;
+  text-align: center;
+  font-weight: 600;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=index.module.css.map */

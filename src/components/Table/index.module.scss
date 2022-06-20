@@ -1,0 +1,23 @@
+.responsive {
+  width: 100%;
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+  color: #d0d0d7;
+  th {
+    text-align: left;
+    color: #fff;
+  }
+
+  td,
+  th {
+    padding: 15px 0;
+    padding-right: 15px;
+  }
+
+  tr {
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.41);
+  }
+}

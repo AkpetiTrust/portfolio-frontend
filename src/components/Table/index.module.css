@@ -1,0 +1,26 @@
+.responsive {
+  width: 100%;
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+  color: #d0d0d7;
+}
+
+.table th {
+  text-align: left;
+  color: #fff;
+}
+
+.table td,
+.table th {
+  padding: 15px 0;
+  padding-right: 15px;
+}
+
+.table tr {
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.41);
+          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.41);
+}
+/*# sourceMappingURL=index.module.css.map */

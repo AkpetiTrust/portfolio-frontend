@@ -1,0 +1,24 @@
+.inbox {
+  padding: 60px 100px;
+}
+
+.inbox table {
+  margin-bottom: 40px;
+}
+
+.inbox table td:nth-child(2) {
+  cursor: pointer;
+}
+
+.inbox table td div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=index.module.css.map */

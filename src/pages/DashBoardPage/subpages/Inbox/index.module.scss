@@ -1,0 +1,17 @@
+.inbox {
+  padding: 60px 100px;
+
+  table {
+    margin-bottom: 40px;
+
+    td:nth-child(2) {
+      cursor: pointer;
+    }
+
+    td div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

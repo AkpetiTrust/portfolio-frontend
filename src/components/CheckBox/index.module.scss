@@ -1,0 +1,24 @@
+.input {
+  display: none;
+
+  &:checked + label svg {
+    display: initial;
+  }
+}
+
+label {
+  --size: 20px;
+  width: var(--size);
+  height: var(--size);
+  background-color: #4d4d5b;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  svg {
+    width: 15px;
+    display: none;
+  }
+}

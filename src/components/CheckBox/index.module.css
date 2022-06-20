@@ -1,0 +1,31 @@
+.input {
+  display: none;
+}
+
+.input:checked + label svg {
+  display: initial;
+}
+
+label {
+  --size: 20px;
+  width: var(--size);
+  height: var(--size);
+  background-color: #4d4d5b;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+label svg {
+  width: 15px;
+  display: none;
+}
+/*# sourceMappingURL=index.module.css.map */
