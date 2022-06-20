@@ -1,3 +1,3 @@
-import DashBoardPage from "./DashBoardPage";
+import DashBoardPage from "./DashBoardPage/DashBoardPage";
 
 export { DashBoardPage };

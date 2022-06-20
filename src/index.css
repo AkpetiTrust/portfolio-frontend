@@ -34,4 +34,9 @@ body {
       grid-template-columns: 280px 1fr;
   background-color: #181820;
 }
+
+.dashboard > section {
+  height: 100vh;
+  overflow: auto;
+}
 /*# sourceMappingURL=index.css.map */

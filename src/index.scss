@@ -31,4 +31,9 @@ body {
   display: grid;
   grid-template-columns: 280px 1fr;
   background-color: #181820;
+
+  & > section {
+    height: 100vh;
+    overflow: auto;
+  }
 }
