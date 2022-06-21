@@ -95,6 +95,8 @@ function SideNav() {
 
   if (translationIndex < 0) translationIndex = 0;
 
+  if (component === "project") translationIndex = 2;
+
   let gapOffset = translationIndex * 25 + "px";
 
   return (

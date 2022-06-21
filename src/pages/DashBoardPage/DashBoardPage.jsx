@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { SideNav } from "../../components";
-import { Home, Inbox, Settings } from "./subpages";
+import { Home, Inbox, Project, Projects, Settings } from "./subpages";
 
 function DashBoardPage() {
   const { component } = useParams();
@@ -10,6 +10,8 @@ function DashBoardPage() {
     home: <Home />,
     inbox: <Inbox />,
     settings: <Settings />,
+    projects: <Projects />,
+    project: <Project />,
   };
 
   let subPage = nameToComponent[component] || <section></section>;

@@ -6,7 +6,8 @@ function NavItem({ icon, name }) {
   const { component } = useParams();
   const active =
     name.toLowerCase() === component ||
-    (name === "Home" && component === undefined);
+    (name === "Home" && component === undefined) ||
+    (name === "Projects" && component === "project");
 
   return (
     <li className={`${style.item} ${active ? style.active : ""}`}>

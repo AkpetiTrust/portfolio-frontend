@@ -1,0 +1,92 @@
+.login {
+  background-color: #181820;
+  height: 100vh;
+  padding: 50px;
+  overflow: hidden;
+  position: relative;
+  background-image: url("../../assets/background.svg");
+  background-size: contain;
+}
+
+.login > svg {
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 60px;
+  height: auto;
+}
+
+.login form {
+  margin: 0 auto;
+  margin-top: 100px;
+  background-color: #2b2b36;
+  border-radius: 5px;
+  padding: 30px 50px;
+  color: #d7d7df;
+  max-width: 450px;
+  padding-bottom: 60px;
+}
+
+.login form.has_error {
+  padding-bottom: 30px;
+}
+
+.login form h3 {
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0.09em;
+  margin-bottom: 18px;
+  font-size: 18px;
+}
+
+.login form .input_group {
+  margin-bottom: 35px;
+}
+
+.login form .input_group label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.login form .input_group input {
+  all: unset;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  border-radius: 5px;
+  padding: 4px 8px;
+  background-color: #444450;
+  width: 100%;
+  font-size: 0.9em;
+}
+
+.login form button {
+  background-color: #517bd6;
+  letter-spacing: 0.09em;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+.login form .error {
+  color: #fd5d6b;
+  margin-top: 30px;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.login .shapes svg {
+  position: absolute;
+}
+
+.login .shapes svg.hexagon {
+  top: -130px;
+  left: -80px;
+  width: 250px;
+}
+
+.login .shapes svg.pattern {
+  bottom: -100px;
+  right: -120px;
+  width: 420px;
+}
+/*# sourceMappingURL=index.module.css.map */
