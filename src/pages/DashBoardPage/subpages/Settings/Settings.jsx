@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, CheckBox } from "../../../../components";
+import { Button, CheckBox, Input } from "../../../../components";
 import { setAvailability } from "../../../../redux/actions";
 import style from "./index.module.css";
 
@@ -24,11 +24,19 @@ function Settings() {
           <form>
             <div className={style.input_group}>
               <label htmlFor="password">New password: </label>
-              <input type="password" id="password" />
+              <Input
+                backgroundColor={"#2d2d34"}
+                type="password"
+                id="password"
+              />
             </div>
             <div className={style.input_group}>
               <label htmlFor="confirm_password">Confirm:</label>
-              <input type="password" id="confirm_password" />
+              <Input
+                backgroundColor={"#2d2d34"}
+                type="password"
+                id="confirm_password"
+              />
             </div>
           </form>
         </section>

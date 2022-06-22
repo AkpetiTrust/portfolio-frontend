@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "../../components";
+import { Button, Input } from "../../components";
 import style from "./index.module.css";
 
 function Login() {
@@ -73,11 +73,21 @@ function Login() {
         <h3>LOGIN</h3>
         <div className={style.input_group}>
           <label htmlFor="name">Name:</label>
-          <input type="text" name="name" id="name" />
+          <Input
+            backgroundColor={"#444450"}
+            type="text"
+            name="name"
+            id="name"
+          />
         </div>
         <div className={style.input_group}>
           <label htmlFor="password">Password:</label>
-          <input type="password" name="password" id="password" />
+          <Input
+            backgroundColor={"#444450"}
+            type="password"
+            name="password"
+            id="password"
+          />
         </div>
         <Button>SUBMIT</Button>
         {error && <p className={style.error}>*Credentials Invalid</p>}

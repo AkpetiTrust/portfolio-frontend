@@ -48,18 +48,6 @@
   margin-bottom: 10px;
 }
 
-.login form .input_group input {
-  all: unset;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: block;
-  border-radius: 5px;
-  padding: 4px 8px;
-  background-color: #444450;
-  width: 100%;
-  font-size: 0.9em;
-}
-
 .login form button {
   background-color: #517bd6;
   letter-spacing: 0.09em;
