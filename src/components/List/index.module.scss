@@ -1,0 +1,23 @@
+.list {
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+  }
+
+  input {
+    all: unset;
+    padding-bottom: 7px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #fff;
+    display: block;
+    width: 80%;
+    margin-bottom: 22px;
+    background-color: transparent;
+  }
+
+  & > button {
+    all: unset;
+    cursor: pointer;
+  }
+}

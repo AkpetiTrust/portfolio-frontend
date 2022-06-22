@@ -3,5 +3,6 @@ import Table from "./Table/Table";
 import Button from "./Button/Button";
 import CheckBox from "./CheckBox/CheckBox";
 import Input from "./Input/Input";
+import List from "./List/List";
 
-export { SideNav, Table, Button, CheckBox, Input };
+export { SideNav, Table, Button, CheckBox, Input, List };

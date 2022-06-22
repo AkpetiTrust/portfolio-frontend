@@ -1,0 +1,24 @@
+.list_item {
+  display: flex;
+  gap: 15px;
+  padding: 6px 25px;
+  border-radius: 50px;
+  background-color: #2b2b36;
+  align-items: center;
+  margin-bottom: 25px;
+  width: fit-content;
+  font-size: 0.9em;
+
+  button {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+      width: 14px;
+      height: auto;
+    }
+  }
+}

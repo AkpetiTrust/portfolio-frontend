@@ -1,3 +1,77 @@
 .project {
   padding: 60px 100px;
+  color: #b9b9cb;
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 120px;
+  }
+
+  .input_group {
+    p {
+      color: #fff;
+      font-weight: 600;
+      font-size: 17px;
+      margin-bottom: 15px;
+    }
+
+    textarea {
+      all: unset;
+      box-sizing: border-box;
+      width: 100%;
+      border-radius: 7px;
+      height: 200px;
+      padding: 15px;
+      background-color: #2b2b36;
+    }
+
+    & > input {
+      background-color: #2b2b36;
+    }
+  }
+
+  .checkbox_container {
+    display: flex;
+    align-items: center;
+    column-gap: 22px;
+  }
+
+  .image_container {
+    img {
+      width: 100%;
+    }
+
+    input {
+      display: none;
+    }
+
+    label {
+      display: inline-block;
+      color: #dddde4;
+      background-color: #2b2b36;
+      border-radius: 5px;
+      text-align: center;
+      padding: 8px 15px;
+      width: 80%;
+      font-weight: 600;
+      margin-top: 15px;
+      font-size: 0.9em;
+      cursor: pointer;
+    }
+  }
+
+  .grid > section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+
+    &:nth-child(2) {
+      row-gap: 30px;
+    }
+  }
+
+  & > button {
+    margin-top: 60px;
+  }
 }
