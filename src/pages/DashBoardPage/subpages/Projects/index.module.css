@@ -1,4 +1,21 @@
 .projects {
-  padding: 60px 100px;
+  --vertical-padding: 60px;
+  padding: var(--vertical-padding) 100px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  row-gap: 70px;
+}
+
+.projects h3 {
+  color: #e5e5e6;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.projects > section {
+  height: calc(100vh - (2 * var(--vertical-padding)));
+  overflow: auto;
 }
 /*# sourceMappingURL=index.module.css.map */
