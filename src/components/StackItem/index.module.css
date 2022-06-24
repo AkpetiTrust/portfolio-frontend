@@ -1,5 +1,8 @@
 .item {
   border-radius: 50%;
+  width: var(--size);
+  height: var(--size);
+  font-size: var(--font-size);
   position: absolute;
   background-color: #2f2f37;
   color: #fff;
@@ -61,5 +64,47 @@
 
 .item:last-child figure svg {
   width: 30px;
+}
+
+@media screen and (max-width: 1130px) {
+  .item {
+    position: static;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    text-transform: capitalize;
+    cursor: initial;
+    border-radius: 0;
+    background-color: transparent;
+    width: unset;
+    height: unset;
+    row-gap: 10px;
+  }
+  .item figure {
+    position: static;
+    --size: 70px;
+    width: var(--size);
+    height: var(--size);
+    background-color: #2f2f37;
+    opacity: 1;
+    -webkit-transition: none;
+    transition: none;
+  }
+  .item figure svg {
+    -webkit-transform: none;
+            transform: none;
+    width: 25px;
+  }
+  .item figure svg path {
+    fill: #fff;
+  }
+  .item p {
+    font-size: 14px;
+    font-weight: 400;
+  }
 }
 /*# sourceMappingURL=index.module.css.map */

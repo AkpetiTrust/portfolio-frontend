@@ -26,7 +26,7 @@ function About() {
           </SectionHeading>
           <p className="about-talk">
             My name is <em>Akpeti Trust</em> and I'm a{" "}
-            <em>fullstack software developer</em>. I enjoy designing and
+            <em>full stack software developer</em>. I enjoy designing and
             building beautiful products, which could be anything from web apps
             to native apps. I deliver software that scales using frameworks like
             React and Laravel. I'm always learning.

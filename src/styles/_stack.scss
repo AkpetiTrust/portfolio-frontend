@@ -4,6 +4,7 @@
   padding: 30px 70px;
   padding-top: 60px;
   position: relative;
+  z-index: 1;
 
   .grid {
     display: grid;
@@ -38,5 +39,45 @@
     max-width: 500px;
     line-height: 1.5em;
     pointer-events: none;
+    z-index: -1;
+  }
+}
+
+@media screen and(max-width: 1130px) {
+  .stack {
+    .grid {
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+      height: unset;
+    }
+
+    .item-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 20px;
+      row-gap: 40px;
+      margin-top: 80px;
+      border-left: 2px solid #fffd77;
+      padding-left: 20px;
+    }
+  }
+}
+
+@media screen and(max-width:580px) {
+  .stack {
+    height: unset;
+    min-height: 100vh;
+    padding: 40px 25px;
+    padding-bottom: 80px;
+
+    .grid {
+      margin: 0;
+      width: 100%;
+    }
+
+    .watermark {
+      font-size: 50px;
+    }
   }
 }

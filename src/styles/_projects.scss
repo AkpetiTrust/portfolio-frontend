@@ -1,6 +1,7 @@
 .projects {
   background-color: #303040;
   padding: 50px 70px;
+  overflow: hidden;
 
   .talk {
     max-width: 400px;
@@ -27,5 +28,15 @@
     color: #b9b9cb;
     max-width: 480px;
     margin-top: 30px;
+  }
+}
+
+@media screen and(max-width:580px) {
+  .projects {
+    padding: 25px;
+    padding-bottom: 60px;
+    .currently {
+      margin-top: 65px;
+    }
   }
 }

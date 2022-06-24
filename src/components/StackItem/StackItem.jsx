@@ -6,11 +6,10 @@ function StackItem({ stackName, image, size, position: { x, y }, fontSize }) {
     <div
       className={style.item}
       style={{
-        width: size + "px",
-        height: size + "px",
+        "--size": size + "px",
         left: x + "px",
         top: y + "px",
-        fontSize: fontSize + "px",
+        "--font-size": fontSize + "px",
       }}
     >
       <p>{stackName}</p>

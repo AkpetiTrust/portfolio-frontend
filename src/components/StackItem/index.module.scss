@@ -1,5 +1,8 @@
 .item {
   border-radius: 50%;
+  width: var(--size);
+  height: var(--size);
+  font-size: var(--font-size);
   position: absolute;
   background-color: #2f2f37;
   color: #fff;
@@ -43,5 +46,44 @@
 
   &:last-child figure svg {
     width: 30px;
+  }
+}
+
+@media screen and(max-width: 1130px) {
+  .item {
+    position: static;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    text-transform: capitalize;
+    cursor: initial;
+    border-radius: 0;
+    background-color: transparent;
+    width: unset;
+    height: unset;
+    row-gap: 10px;
+
+    figure {
+      position: static;
+      --size: 70px;
+      width: var(--size);
+      height: var(--size);
+      background-color: #2f2f37;
+      opacity: 1;
+      transition: none;
+
+      svg {
+        transform: none;
+        width: 25px;
+
+        path {
+          fill: #fff;
+        }
+      }
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+    }
   }
 }

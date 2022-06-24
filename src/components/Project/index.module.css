@@ -115,6 +115,7 @@
   color: #fff;
   font-size: 17px;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .project .top .icons {
@@ -125,6 +126,18 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 20px;
+}
+
+.project .top .icons a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .project .top .icons svg {
@@ -145,16 +158,17 @@
   margin-top: 15px;
 }
 
+.project .description .list_area {
+  margin-top: 20px;
+}
+
 .project .description .grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: max-content 1fr;
-      grid-template-columns: -webkit-max-content 1fr;
-      grid-template-columns: max-content 1fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-column-gap: 20px;
           column-gap: 20px;
-  row-gap: 10px;
-  margin-top: 20px;
+  margin-bottom: 10px;
   font-size: 15px;
 }
 
@@ -169,7 +183,9 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 15px;
+  -webkit-column-gap: 15px;
+          column-gap: 15px;
+  row-gap: 8px;
   color: #b9b9cb;
   font-family: "Roboto Mono", monospace;
 }
@@ -194,5 +210,32 @@
 
 .project:last-child {
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .project {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 30px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 25px;
+    margin-bottom: 55px;
+  }
+  .project::before {
+    display: none;
+  }
+  .project .description > p {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .project {
+    padding: 30px 20px;
+  }
 }
 /*# sourceMappingURL=index.module.css.map */

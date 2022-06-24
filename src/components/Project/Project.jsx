@@ -89,18 +89,22 @@ function Project({
       </a>
       <section className={style.description}>
         <p>{description}</p>
-        <div className={style.grid}>
-          <p className={style.label}>Technologies:</p>
-          <div className={style.list}>
-            {technologies.map((technology) => (
-              <span key={technology}>{technology}</span>
-            ))}
+        <div className={style.list_area}>
+          <div className={style.grid}>
+            <p className={style.label}>Technologies:</p>
+            <div className={style.list}>
+              {technologies.map((technology) => (
+                <span key={technology}>{technology}</span>
+              ))}
+            </div>
           </div>
-          <p className={style.label}>Roles:</p>
-          <div className={style.list}>
-            {roles.map((role) => (
-              <span key={role}>{role}</span>
-            ))}
+          <div className={style.grid}>
+            <p className={style.label}>Roles:</p>
+            <div className={style.list}>
+              {roles.map((role) => (
+                <span key={role}>{role}</span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
