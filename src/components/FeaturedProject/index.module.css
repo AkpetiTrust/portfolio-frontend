@@ -5,6 +5,8 @@
   list-style-type: none;
   cursor: -webkit-grab;
   cursor: grab;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
 }
 
 .project .title {
