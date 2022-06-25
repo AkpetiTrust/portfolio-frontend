@@ -5,17 +5,88 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  row-gap: 70px;
+  -webkit-column-gap: 90px;
+          column-gap: 90px;
 }
 
 .projects h3 {
   color: #e5e5e6;
   font-size: 20px;
   font-weight: 600;
+  margin-bottom: 30px;
 }
 
 .projects > section {
   height: calc(100vh - (2 * var(--vertical-padding)));
   overflow: auto;
+  padding-right: 30px;
+}
+
+.projects > section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.projects > section::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.projects > section::-webkit-scrollbar-thumb {
+  background-color: #494955;
+  border-radius: 15px;
+}
+
+.projects .featured {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 30px;
+}
+
+.projects table a {
+  color: #d0d0d7;
+}
+
+.projects table td .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.projects table td .flex button {
+  all: unset;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.projects section:nth-child(2) > a {
+  margin: 40px 0;
+  font-size: 15px;
+}
+
+.projects section:nth-child(2) > button {
+  background-color: #4079ff;
+  border-radius: 50px;
+  font-size: 11px;
+  width: 40%;
 }
 /*# sourceMappingURL=index.module.css.map */

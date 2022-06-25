@@ -3,16 +3,73 @@
   padding: var(--vertical-padding) 100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  row-gap: 70px;
+  column-gap: 90px;
 
   h3 {
     color: #e5e5e6;
     font-size: 20px;
     font-weight: 600;
+    margin-bottom: 30px;
   }
 
   & > section {
     height: calc(100vh - (2 * var(--vertical-padding)));
     overflow: auto;
+    padding-right: 30px;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #494955;
+      border-radius: 15px;
+    }
+  }
+
+  .featured {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  table {
+    a {
+      color: #d0d0d7;
+    }
+
+    td {
+      .flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        button {
+          all: unset;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  section:nth-child(2) {
+    & > a {
+      margin: 40px 0;
+      font-size: 15px;
+    }
+    & > button {
+      background-color: #4079ff;
+      border-radius: 50px;
+      font-size: 11px;
+      width: 40%;
+    }
   }
 }

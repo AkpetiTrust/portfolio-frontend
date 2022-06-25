@@ -1,0 +1,53 @@
+.project {
+  background-color: #272734;
+  border-radius: 5px;
+  padding: 15px;
+  list-style-type: none;
+
+  .title {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+
+  .description {
+    color: #bcbccd;
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 50px;
+      background-color: #40404f;
+      font-size: 10px;
+      width: 60px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    button {
+      all: unset;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+}
