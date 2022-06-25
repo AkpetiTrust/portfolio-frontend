@@ -1,13 +1,21 @@
 import React, { useState } from "react";
+import Alert from "../Alert/Alert";
 import Form from "../Form/Form";
 import Info from "../Info/Info";
 import SectionHeading from "../SectionHeading/SectionHeading";
 
 function Contact() {
   const [isAvailable, setIsAvailable] = useState(false);
+  const [alertActive, setAlertActive] = useState(false);
+  const [message, setMessage] = useState("");
 
   return (
     <section className="contact" id="contact">
+      <Alert
+        message={message}
+        active={alertActive}
+        setActive={setAlertActive}
+      />
       <div className="inner">
         <SectionHeading>CONTΔCT MΣ</SectionHeading>
         <div className="grid">
@@ -37,6 +45,9 @@ function Contact() {
                     />
                   </svg>
                 }
+                item="Email"
+                setMessage={setMessage}
+                setAlertActive={setAlertActive}
               >
                 akpetitrust@gmail.com
               </Info>
@@ -56,6 +67,9 @@ function Contact() {
                     />
                   </svg>
                 }
+                item="Number"
+                setMessage={setMessage}
+                setAlertActive={setAlertActive}
               >
                 +234-8145049272
               </Info>
