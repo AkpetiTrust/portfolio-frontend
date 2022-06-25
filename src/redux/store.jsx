@@ -86,7 +86,7 @@ const store = createStore(
       },
       {
         img: null,
-        title: "Exchange App",
+        title: "Exchange App 1",
         live: "https://exchange-app.trust-akpeti.com",
         github: "https://github.com/AkpetiTrust/exchange_app",
         description:
@@ -99,7 +99,7 @@ const store = createStore(
       },
       {
         img: null,
-        title: "Exchange App",
+        title: "Exchange App 2",
         live: "https://exchange-app.trust-akpeti.com",
         github: "https://github.com/AkpetiTrust/exchange_app",
         description:
@@ -112,7 +112,7 @@ const store = createStore(
       },
       {
         img: null,
-        title: "Exchange App",
+        title: "Exchange App 3",
         live: "https://exchange-app.trust-akpeti.com",
         github: "https://github.com/AkpetiTrust/exchange_app",
         description:
@@ -125,7 +125,7 @@ const store = createStore(
       },
       {
         img: null,
-        title: "Exchange App",
+        title: "Exchange App 4",
         live: "https://exchange-app.trust-akpeti.com",
         github: "https://github.com/AkpetiTrust/exchange_app",
         description:

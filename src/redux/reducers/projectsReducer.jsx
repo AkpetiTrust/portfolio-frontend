@@ -27,12 +27,22 @@ export const projectsReducer = (state = [], action) => {
 
     hoveringItem.order = orderOfItemToReplace;
 
-    stateCopy.map((project) =>
-      Math.abs(project.order - orderOfHoveringItem) <=
-      Math.abs(orderOfHoveringItem - orderOfItemToReplace)
-        ? { ...project, order: project.order + shiftIndex }
-        : project
-    );
+    stateCopy = stateCopy.map((project) => {
+      const projectIsInTheRightDistance =
+        Math.abs(project.order - orderOfHoveringItem) <=
+        Math.abs(orderOfHoveringItem - orderOfItemToReplace);
+
+      const projectShouldBeMoved =
+        projectIsInTheRightDistance &&
+        project.id !== hoveringItem.id &&
+        Math.sign(orderOfHoveringItem - project.order) === shiftIndex;
+
+      if (projectShouldBeMoved) {
+        return { ...project, order: project.order + shiftIndex };
+      } else {
+        return project;
+      }
+    });
 
     return stateCopy;
   }

@@ -13,7 +13,7 @@ function SortableList({ className }) {
           .filter((project) => project.featured)
           .sort((a, b) => a.order - b.order)
           .map((project) => (
-            <FeaturedProject project={project} key={project.id} />
+            <FeaturedProject project={project} key={project.order} />
           ))}
       </ul>
     </DndProvider>

@@ -9,33 +9,35 @@ function FeaturedProject({ project: { title, description, id, order } }) {
   const ref = useRef(null);
   const dispatch = useDispatch();
 
-  const [{ isDragging }, drag] = useDrag(() => ({
-    type: "project",
-    item: { order },
-    collect: (monitor) => ({
-      isDragging: monitor.isDragging(),
+  const [_, drag] = useDrag(
+    () => ({
+      type: "project",
+      item: { order },
+      collect: (monitor) => ({
+        isDragging: monitor.isDragging(),
+      }),
     }),
-  }));
+    [order]
+  );
 
-  const [_, drop] = useDrop(() => ({
+  const [{ isOver }, drop] = useDrop(() => ({
     accept: "project",
-    hover: (item, monitor) => {
+    drop: (item, monitor) => {
       let hoverIsNested = !monitor.isOver({ shallow: true });
       if (item.order === order || hoverIsNested) {
         return;
       }
       dispatch(updateOrder(item.order, order));
     },
+    collect: (monitor) => ({
+      isOver: monitor.isOver() && monitor.getItem().order !== order,
+    }),
   }));
 
   drag(drop(ref));
 
   return (
-    <li
-      ref={ref}
-      className={style.project}
-      style={{ opacity: isDragging ? 0 : 1 }}
-    >
+    <li ref={ref} className={style.project} style={{ opacity: isOver ? 0 : 1 }}>
       <p className={style.title}>{title}</p>
       <p className={style.description}>{description}</p>
       <div className={style.controls}>
