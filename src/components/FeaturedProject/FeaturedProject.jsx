@@ -1,10 +1,41 @@
-import React from "react";
+import React, { useRef } from "react";
 import style from "./index.module.css";
 import { Link } from "react-router-dom";
+import { useDrag, useDrop } from "react-dnd";
+import { updateOrder } from "../../redux/actions";
+import { useDispatch } from "react-redux";
 
-function FeaturedProject({ project: { title, description, id } }) {
+function FeaturedProject({ project: { title, description, id, order } }) {
+  const ref = useRef(null);
+  const dispatch = useDispatch();
+
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: "project",
+    item: { order },
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
+  }));
+
+  const [_, drop] = useDrop(() => ({
+    accept: "project",
+    hover: (item, monitor) => {
+      let hoverIsNested = !monitor.isOver({ shallow: true });
+      if (item.order === order || hoverIsNested) {
+        return;
+      }
+      dispatch(updateOrder(item.order, order));
+    },
+  }));
+
+  drag(drop(ref));
+
   return (
-    <li className={style.project}>
+    <li
+      ref={ref}
+      className={style.project}
+      style={{ opacity: isDragging ? 0 : 1 }}
+    >
       <p className={style.title}>{title}</p>
       <p className={style.description}>{description}</p>
       <div className={style.controls}>

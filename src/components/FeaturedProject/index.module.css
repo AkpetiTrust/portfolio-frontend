@@ -3,6 +3,8 @@
   border-radius: 5px;
   padding: 15px;
   list-style-type: none;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 
 .project .title {

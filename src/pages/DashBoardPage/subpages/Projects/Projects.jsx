@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Button,
-  CheckBox,
-  FeaturedProject,
-  Table,
-} from "../../../../components";
+import { Button, CheckBox, SortableList, Table } from "../../../../components";
 import style from "./index.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleFeatured } from "../../../../redux/actions";
@@ -18,14 +13,7 @@ function Projects() {
     <section className={style.projects}>
       <section>
         <h3>Featured Projects</h3>
-        <ul className={style.featured}>
-          {projects
-            .filter((project) => project.featured)
-            .sort((a, b) => a.order - b.order)
-            .map((project) => (
-              <FeaturedProject project={project} key={project.id} />
-            ))}
-        </ul>
+        <SortableList className={style.featured} />
       </section>
       <section>
         <h3>All Projects</h3>

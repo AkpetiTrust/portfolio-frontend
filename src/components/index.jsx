@@ -5,5 +5,15 @@ import CheckBox from "./CheckBox/CheckBox";
 import Input from "./Input/Input";
 import List from "./List/List";
 import FeaturedProject from "./FeaturedProject/FeaturedProject";
+import SortableList from "./SortableList/SortableList";
 
-export { SideNav, Table, Button, CheckBox, Input, List, FeaturedProject };
+export {
+  SideNav,
+  Table,
+  Button,
+  CheckBox,
+  Input,
+  List,
+  FeaturedProject,
+  SortableList,
+};
