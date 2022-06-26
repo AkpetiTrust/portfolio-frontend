@@ -5,6 +5,7 @@ import cryptoImage from "../../assets/crypto.png";
 import Project from "../Project/Project";
 import Button from "../Button/Button";
 import Currently from "../Currently/Currently";
+import ProjectSkeleton from "../ProjectSkeleton/ProjectSkeleton";
 
 function Projects() {
   const [projects, setProjects] = useState([
@@ -30,6 +31,8 @@ function Projects() {
     },
   ]);
 
+  const [loading, setLoading] = useState(true);
+
   return (
     <section className="projects" id="projects">
       <SectionHeading>PRΘJECTS</SectionHeading>
@@ -39,9 +42,16 @@ function Projects() {
         played a role in.
       </p>
       <section className="projects-container">
-        {projects.map((project, index) => (
-          <Project project={project} key={project.title} index={index} />
-        ))}
+        {loading ? (
+          <>
+            <ProjectSkeleton />
+            <ProjectSkeleton />
+          </>
+        ) : (
+          projects.map((project, index) => (
+            <Project project={project} key={project.title} index={index} />
+          ))
+        )}
       </section>
       <Button className="btn" to={"/archive"} isLink>
         SEE MORE

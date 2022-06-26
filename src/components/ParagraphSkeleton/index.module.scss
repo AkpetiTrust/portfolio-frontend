@@ -1,0 +1,44 @@
+.paragraph {
+  height: 12px;
+  border-radius: 40px;
+  margin-bottom: 8px;
+  position: relative;
+  background-color: hsl(var(--h), var(--s), var(--l));
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    background-color: hsl(var(--h), var(--s), calc(var(--l) + 15%));
+    transform: translateX(-100%);
+    animation: slide linear 1.8s infinite;
+  }
+
+  &:last-child {
+    width: 80%;
+  }
+  &:first-child {
+    width: 100%;
+  }
+}
+
+@media screen and(max-width:580px) {
+  .paragraph {
+    height: 8px;
+
+    &::before {
+      animation: slide linear 1.2s infinite;
+    }
+  }
+}
+
+@keyframes slide {
+  to {
+    left: 100%;
+    transform: translateX(100%);
+  }
+}

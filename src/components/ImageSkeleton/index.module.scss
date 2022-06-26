@@ -1,0 +1,35 @@
+.image {
+  aspect-ratio: 1440 / 1024;
+  --h: 240;
+  --s: 15%;
+  --l: 40%;
+  background-color: hsl(var(--h), var(--s), var(--l));
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    background-color: hsl(var(--h), var(--s), calc(var(--l) + 15%));
+    transform: translateX(-100%);
+    animation: slide linear 1.8s infinite;
+  }
+}
+
+@media screen and(max-width:580px) {
+  .image::before {
+    animation: slide linear 1.2s infinite;
+  }
+}
+
+@keyframes slide {
+  to {
+    left: 100%;
+    transform: translateX(100%);
+  }
+}
