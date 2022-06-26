@@ -4,6 +4,7 @@ import {
   Contact,
   Footer,
   Hero,
+  Preloader,
   Projects,
   Services,
   Stack,
@@ -12,6 +13,7 @@ import {
 function Home() {
   return (
     <>
+      <Preloader />
       <Hero />
       <About />
       <Services />

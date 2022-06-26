@@ -1,0 +1,30 @@
+.svg {
+  width: 90px;
+  height: auto;
+  transform: scale(2);
+
+  path {
+    display: inline-block;
+  }
+
+  #a {
+    transform: translateX(-50%);
+  }
+
+  #t {
+    transform: translateX(50%);
+  }
+
+  #a,
+  #t {
+    opacity: 0;
+    animation: fadeIn 1s 1 forwards;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

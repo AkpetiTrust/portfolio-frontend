@@ -1,0 +1,100 @@
+@font-face {
+  font-family: Causten;
+  src: url("../../assets/Causten-Regular.otf");
+}
+
+.preloader {
+  position: fixed;
+  z-index: 10;
+  background-color: #000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+  padding: 15px;
+  -webkit-animation: disappear 1s 3s 1 forwards;
+          animation: disappear 1s 3s 1 forwards;
+}
+
+.preloader p {
+  color: #fff;
+  font-family: Causten, Poppins;
+  opacity: 0;
+  -webkit-animation: show 0.8s 1.2s 1 forwards;
+          animation: show 0.8s 1.2s 1 forwards;
+}
+
+.preloader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #fffd77;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-animation: slideIn 2.5s 1 forwards;
+          animation: slideIn 2.5s 1 forwards;
+}
+
+@media screen and (min-width: 580px) {
+  .preloader p {
+    font-size: 18px;
+  }
+}
+
+@-webkit-keyframes show {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideIn {
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes disappear {
+  to {
+    -webkit-transform: translateY(110%);
+            transform: translateY(110%);
+  }
+}
+
+@keyframes disappear {
+  to {
+    -webkit-transform: translateY(110%);
+            transform: translateY(110%);
+  }
+}
+/*# sourceMappingURL=index.module.css.map */

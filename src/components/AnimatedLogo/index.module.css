@@ -1,0 +1,44 @@
+.svg {
+  width: 90px;
+  height: auto;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+.svg path {
+  display: inline-block;
+}
+
+.svg #a {
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.svg #t {
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+.svg #a,
+.svg #t {
+  opacity: 0;
+  -webkit-animation: fadeIn 1s 1 forwards;
+          animation: fadeIn 1s 1 forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=index.module.css.map */

@@ -1,0 +1,64 @@
+@font-face {
+  font-family: Causten;
+  src: url("../../assets/Causten-Regular.otf");
+}
+
+.preloader {
+  position: fixed;
+  z-index: 10;
+  background-color: #000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 15px;
+  animation: disappear 1s 3s 1 forwards;
+
+  p {
+    color: #fff;
+    font-family: Causten, Poppins;
+    opacity: 0;
+    animation: show 0.8s 1.2s 1 forwards;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #fffd77;
+    transform: translateX(-100%);
+    animation: slideIn 2.5s 1 forwards;
+  }
+}
+
+@media screen and(min-width:580px) {
+  .preloader p {
+    font-size: 18px;
+  }
+}
+
+@keyframes show {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes disappear {
+  to {
+    transform: translateY(110%);
+  }
+}
