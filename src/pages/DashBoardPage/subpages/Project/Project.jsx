@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { Button, CheckBox, Input, List } from "../../../../components";
 import style from "./index.module.css";
 
@@ -6,6 +8,20 @@ function Project() {
   const [featured, setFeatured] = useState(false);
   const [roles, setRoles] = useState([]);
   const [technologies, setTechnologies] = useState([]);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [liveURL, setLiveURL] = useState("");
+  const [githubURL, setGithubURL] = useState("");
+  const [imageLink, setImageLink] = useState("");
+
+  const projects = useSelector((state) => state.projects);
+
+  const { id } = useParams();
+
+  const getNextOrder = () => {
+    let sortedProjects = [...projects].sort((a, b) => a.order - b.order);
+    return sortedProjects[sortedProjects.length - 1].order + 1;
+  };
 
   return (
     <section className={style.project}>
@@ -13,7 +29,7 @@ function Project() {
         <section>
           <div className={style.input_group}>
             <p>Project Title</p>
-            <Input type="text" />
+            <Input value={title} setValue={setTitle} type="text" />
           </div>
           <div className={`${style.input_group} ${style.image_container}`}>
             <p>Image</p>
@@ -32,15 +48,20 @@ function Project() {
         <section>
           <div className={style.input_group}>
             <p>Project Description</p>
-            <textarea></textarea>
+            <textarea
+              value={description}
+              onChange={(e) => {
+                setDescription(e.currentTarget.value);
+              }}
+            ></textarea>
           </div>
           <div className={style.input_group}>
             <p>Live URL</p>
-            <Input type="text" />
+            <Input value={liveURL} setValue={setLiveURL} type="text" />
           </div>
           <div className={style.input_group}>
             <p>Github URL</p>
-            <Input type="text" />
+            <Input value={githubURL} setValue={setGithubURL} type="text" />
           </div>
           <div className={style.checkbox_container}>
             <p>Featured:</p>
