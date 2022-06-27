@@ -1,0 +1,65 @@
+.loading {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+
+.loading span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: currentColor;
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.loading span:nth-child(1) {
+  -webkit-animation: shine 1.5s infinite;
+          animation: shine 1.5s infinite;
+}
+
+.loading span:nth-child(2) {
+  -webkit-animation: shine 1.5s 0.5s infinite;
+          animation: shine 1.5s 0.5s infinite;
+}
+
+.loading span:nth-child(3) {
+  -webkit-animation: shine 1.5s 1s infinite;
+          animation: shine 1.5s 1s infinite;
+}
+
+@-webkit-keyframes shine {
+  0% {
+    opacity: 0.4;
+  }
+  20% {
+    opacity: 1;
+  }
+  33%,
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0.4;
+  }
+  20% {
+    opacity: 1;
+  }
+  33%,
+  100% {
+    opacity: 0.4;
+  }
+}
+/*# sourceMappingURL=index.module.css.map */

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { api } from "../../constants";
 import Alert from "../Alert/Alert";
 import Form from "../Form/Form";
 import Info from "../Info/Info";
@@ -8,6 +9,12 @@ function Contact() {
   const [isAvailable, setIsAvailable] = useState(false);
   const [alertActive, setAlertActive] = useState(false);
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    api.get("settings").then(({ response }) => {
+      setIsAvailable(!!response.is_available);
+    });
+  }, []);
 
   return (
     <section className="contact" id="contact">
@@ -76,7 +83,7 @@ function Contact() {
             </div>
           </section>
 
-          <Form />
+          <Form setAlertMessage={setMessage} setAlertActive={setAlertActive} />
         </div>
       </div>
     </section>

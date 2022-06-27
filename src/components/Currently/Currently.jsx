@@ -1,13 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { api } from "../../constants";
+import ParagraphSkeleton from "../ParagraphSkeleton/ParagraphSkeleton";
 
 function Currently(props) {
-  const [currently, setCurrently] = useState(
-    "I'm currently learning the blockchain technology. When I'm not working you can find me watching a movie. Or I'm probably just sleeping 😴 ."
-  );
+  const [currently, setCurrently] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    api.get("settings").then((result) => {
+      setCurrently(result.response.currently);
+      setLoading(false);
+    });
+  }, []);
 
   return (
     <section {...props}>
-      <p>{currently}</p>
+      {loading ? (
+        <>
+          <ParagraphSkeleton />
+          <ParagraphSkeleton />
+          <ParagraphSkeleton />
+        </>
+      ) : (
+        <p>{currently}</p>
+      )}
     </section>
   );
 }

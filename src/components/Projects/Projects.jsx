@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SectionHeading from "../SectionHeading/SectionHeading";
 import whotImage from "../../assets/whot.png";
 import cryptoImage from "../../assets/crypto.png";
@@ -6,6 +6,7 @@ import Project from "../Project/Project";
 import Button from "../Button/Button";
 import Currently from "../Currently/Currently";
 import ProjectSkeleton from "../ProjectSkeleton/ProjectSkeleton";
+import { api } from "../../constants";
 
 function Projects() {
   const [projects, setProjects] = useState([
@@ -30,8 +31,14 @@ function Projects() {
       roles: ["UI Design", "Front-end"],
     },
   ]);
-
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    api.get("projects/featured").then((result) => {
+      setProjects(result.response);
+      // setLoading(false);
+    });
+  }, []);
 
   return (
     <section className="projects" id="projects">
