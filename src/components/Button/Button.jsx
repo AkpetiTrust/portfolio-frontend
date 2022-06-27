@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import style from "./index.module.css";
 
-function Button({ onClick, children, to }) {
+function Button({ onClick, children, to, ...props }) {
   let ContainerComponent = to
     ? (props) => (
         <Link to={to} {...props}>
@@ -12,7 +12,7 @@ function Button({ onClick, children, to }) {
     : (props) => <button {...props}>{props.children}</button>;
 
   return (
-    <ContainerComponent onClick={onClick} className={style.button}>
+    <ContainerComponent onClick={onClick} className={style.button} {...props}>
       {children}
     </ContainerComponent>
   );

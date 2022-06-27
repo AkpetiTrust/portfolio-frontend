@@ -1,15 +1,21 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { StatCard } from "./components";
 import style from "./index.module.css";
 
 function Home() {
+  const [projects, messages] = useSelector((state) => [
+    state.projects,
+    state.messages,
+  ]);
+
   return (
     <section className={style.home}>
       <h1>PORTFOLIO CONTROL CENTER</h1>
       <h3>Stats:</h3>
       <div className={style.grid}>
-        <StatCard number={8}>Projects</StatCard>
-        <StatCard number={11}>Messages</StatCard>
+        <StatCard number={projects.length}>Projects</StatCard>
+        <StatCard number={messages.length}>Messages</StatCard>
         <figure>
           <svg
             width="402"

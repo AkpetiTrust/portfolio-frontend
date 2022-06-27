@@ -1,4 +1,8 @@
 export const projectsReducer = (state = [], action) => {
+  if (action.type === "INITIALIZE_STATE") {
+    return action.payload.projects;
+  }
+
   if (action.type === "PROJECTS") {
     return action.payload;
   }

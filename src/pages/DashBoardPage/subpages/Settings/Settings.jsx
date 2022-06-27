@@ -1,15 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, CheckBox, Input } from "../../../../components";
-import { setAvailability } from "../../../../redux/actions";
+import { Button, CheckBox, Input, Loading } from "../../../../components";
+import { api } from "../../../../constants";
+import { setAvailability, setCurrently } from "../../../../redux/actions";
 import style from "./index.module.css";
 
 function Settings() {
-  const available = useSelector((state) => state.available);
+  const [available, currently] = useSelector((state) => [
+    state.available,
+    state.currently,
+  ]);
   const dispatch = useDispatch();
+
+  const [password, setPassword] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const onChange = (available) => {
     dispatch(setAvailability(available));
+  };
+
+  const onTextAreaChange = (e) => {
+    dispatch(setCurrently(e.currentTarget.value));
+  };
+
+  const onClick = async () => {
+    setLoading(true);
+    setError(false);
+    await api.post("settings", {
+      authIsRequired: true,
+      body: { currently, is_available: available },
+    });
+
+    if (password) {
+      if (password !== passwordConfirm) {
+        setError(true);
+      } else {
+        await api.post("update-password", {
+          authIsRequired: true,
+          body: { password },
+        });
+      }
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -17,7 +52,7 @@ function Settings() {
       <div className={style.flex}>
         <section className={style.textarea_container}>
           <h3>Currently</h3>
-          <textarea></textarea>
+          <textarea value={currently} onChange={onTextAreaChange}></textarea>
         </section>
         <section>
           <h3>Password</h3>
@@ -27,6 +62,8 @@ function Settings() {
               <Input
                 backgroundColor={"#2d2d34"}
                 type="password"
+                value={password}
+                setValue={setPassword}
                 id="password"
               />
             </div>
@@ -35,9 +72,12 @@ function Settings() {
               <Input
                 backgroundColor={"#2d2d34"}
                 type="password"
+                value={passwordConfirm}
+                setValue={setPasswordConfirm}
                 id="confirm_password"
               />
             </div>
+            {error && <p className={style.error}>Passwords don't match</p>}
           </form>
         </section>
       </div>
@@ -57,7 +97,9 @@ function Settings() {
         </div>
       </section>
 
-      <Button>SAVE ALL CHANGES</Button>
+      <Button disabled={loading} onClick={onClick}>
+        {loading ? <Loading height={"24px"} /> : "SAVE ALL CHANGES"}
+      </Button>
     </section>
   );
 }

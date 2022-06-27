@@ -1,9 +1,35 @@
-import React, { useState } from "react";
-import { Button, Input } from "../../components";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button, Input, Loading } from "../../components";
+import { api } from "../../constants";
 import style from "./index.module.css";
 
 function Login() {
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate("/dashboard");
+    }
+  }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    api.post("login", { body: { name, password } }).then((result) => {
+      setLoading(false);
+      if (result.response === "Invalid credentials") {
+        return setError(true);
+      }
+
+      localStorage.setItem("token", result.token);
+      navigate(0);
+    });
+  };
 
   return (
     <section className={style.login}>
@@ -69,7 +95,7 @@ function Login() {
           }}
         />
       </svg>
-      <form className={error ? style.has_error : ""}>
+      <form onSubmit={handleSubmit} className={error ? style.has_error : ""}>
         <h3>LOGIN</h3>
         <div className={style.input_group}>
           <label htmlFor="name">Name:</label>
@@ -78,6 +104,9 @@ function Login() {
             type="text"
             name="name"
             id="name"
+            value={name}
+            setValue={setName}
+            required
           />
         </div>
         <div className={style.input_group}>
@@ -87,9 +116,12 @@ function Login() {
             type="password"
             name="password"
             id="password"
+            value={password}
+            setValue={setPassword}
+            required
           />
         </div>
-        <Button>SUBMIT</Button>
+        <Button>{loading ? <Loading height={"21.6px"} /> : "SUBMIT"}</Button>
         {error && <p className={style.error}>*Credentials Invalid</p>}
       </form>
 

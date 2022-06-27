@@ -53,6 +53,11 @@
   display: inline-block;
 }
 
+.settings .flex .error {
+  color: #fd5d6b;
+  margin-top: 18px;
+}
+
 .settings .availability_container {
   display: -webkit-box;
   display: -ms-flexbox;

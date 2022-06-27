@@ -6,6 +6,8 @@ import Input from "./Input/Input";
 import List from "./List/List";
 import FeaturedProject from "./FeaturedProject/FeaturedProject";
 import SortableList from "./SortableList/SortableList";
+import Loading from "./Loading/Loading";
+import Alert from "./Alert/Alert";
 
 export {
   SideNav,
@@ -16,4 +18,6 @@ export {
   List,
   FeaturedProject,
   SortableList,
+  Loading,
+  Alert,
 };

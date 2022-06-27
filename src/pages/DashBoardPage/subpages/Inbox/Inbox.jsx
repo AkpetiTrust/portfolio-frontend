@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./index.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Table, CheckBox } from "../../../../components";
+import { Button, Table, CheckBox, Loading } from "../../../../components";
 import { truncateWords } from "../../../../utils/functions";
 import {
   deleteSelectedMessages,
@@ -11,13 +11,18 @@ import {
 function Inbox() {
   const messages = useSelector((state) => state.messages);
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
 
   const onChange = (id, selected) => {
     dispatch(selectMessage(id, selected));
   };
 
   const onClick = () => {
-    dispatch(deleteSelectedMessages());
+    setLoading(true);
+    deleteSelectedMessages(messages).then((action) => {
+      dispatch(action);
+      setLoading(false);
+    });
   };
 
   return (
@@ -33,11 +38,11 @@ function Inbox() {
         <tbody>
           {messages.map((message) => (
             <tr key={`${message.id} selected:${Number(message.selected)}`}>
-              <td>{message.name}</td>
+              <td>{message.name || "Anonymous"}</td>
               <td>{truncateWords(message.message, 10)}</td>
               <td>
                 <div className={style.flex}>
-                  {message.email}{" "}
+                  {message.email || "Anonymous"}{" "}
                   <CheckBox
                     id={message.id}
                     checked={message.selected}
@@ -51,7 +56,9 @@ function Inbox() {
           ))}
         </tbody>
       </Table>
-      <Button onClick={onClick}>DELETE SELECTED</Button>
+      <Button disabled={loading} onClick={onClick}>
+        {loading ? <Loading height={"24px"} /> : "DELETE SELECTED"}
+      </Button>
     </section>
   );
 }

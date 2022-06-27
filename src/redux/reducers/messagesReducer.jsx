@@ -1,4 +1,8 @@
 export const messagesReducer = (state = [], action) => {
+  if (action.type === "INITIALIZE_STATE") {
+    return action.payload.messages;
+  }
+
   if (action.type === "MESSAGES") {
     return action.payload;
   }
