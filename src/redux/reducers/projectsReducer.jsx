@@ -10,7 +10,7 @@ export const projectsReducer = (state = [], action) => {
   if (action.type === "TOGGLE_FEATURED") {
     return state.map((project) =>
       project.id === action.payload.id
-        ? { ...project, featured: action.payload.featured }
+        ? { ...project, is_featured: action.payload.featured }
         : project
     );
   }
@@ -49,6 +49,10 @@ export const projectsReducer = (state = [], action) => {
     });
 
     return stateCopy;
+  }
+
+  if (action.type === "NEW_PROJECT") {
+    return [...state, action.payload];
   }
 
   return state;

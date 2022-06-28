@@ -36,7 +36,7 @@ function Projects() {
                   <div className={style.flex}>
                     <CheckBox
                       id={project.id}
-                      checked={project.featured}
+                      checked={project.is_featured}
                       onChange={(e) => {
                         dispatch(
                           toggleFeatured(project.id, e.currentTarget.checked)

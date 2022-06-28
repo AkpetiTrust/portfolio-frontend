@@ -10,7 +10,7 @@ function SortableList({ className }) {
   const projects = useSelector((state) => state.projects);
   let orderString = "";
   projects
-    .filter((project) => project.featured)
+    .filter((project) => project.is_featured)
     .forEach((project) => {
       orderString += project.order;
     });
@@ -22,7 +22,7 @@ function SortableList({ className }) {
       <Flipper flipKey={orderString}>
         <Ul className={className}>
           {projects
-            .filter((project) => project.featured)
+            .filter((project) => project.is_featured)
             .sort((a, b) => a.order - b.order)
             .map((project) => (
               <FeaturedProject project={project} key={project.order} />

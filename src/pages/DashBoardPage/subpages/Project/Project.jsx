@@ -1,7 +1,17 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { Button, CheckBox, Input, List } from "../../../../components";
+import {
+  Alert,
+  Button,
+  CheckBox,
+  Input,
+  List,
+  Loading,
+} from "../../../../components";
+import { api } from "../../../../constants";
+import { addProject } from "../../../../redux/actions";
+import { uploadFile } from "../../../../utils/functions";
 import style from "./index.module.css";
 
 function Project() {
@@ -13,14 +23,71 @@ function Project() {
   const [liveURL, setLiveURL] = useState("");
   const [githubURL, setGithubURL] = useState("");
   const [imageLink, setImageLink] = useState("");
+  const [imageLoading, setImageLoading] = useState(false);
+  const [savingProject, setSavingProject] = useState(false);
+
+  const [alertActive, setAlertActive] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
 
   const projects = useSelector((state) => state.projects);
+  const dispatch = useDispatch();
 
   const { id } = useParams();
 
   const getNextOrder = () => {
     let sortedProjects = [...projects].sort((a, b) => a.order - b.order);
-    return sortedProjects[sortedProjects.length - 1].order + 1;
+    return (sortedProjects[sortedProjects.length - 1]?.order || 0) + 1;
+  };
+
+  const handleImageUpload = (e) => {
+    const image = e.currentTarget.files[0];
+    setImageLoading(true);
+    uploadFile(image).then((url) => {
+      setImageLoading(false);
+      setImageLink(url);
+    });
+  };
+
+  const handleSubmit = () => {
+    if (id) {
+    } else {
+      uploadNewProject();
+    }
+  };
+
+  const reset = () => {
+    setFeatured(false);
+    setRoles([]);
+    setTechnologies([]);
+    setLiveURL("");
+    setTitle("");
+    setDescription("");
+    setGithubURL("");
+    setImageLink("");
+  };
+
+  const uploadNewProject = async () => {
+    if (!title || !description || !imageLink || !liveURL) return;
+
+    let body = {
+      is_featured: featured,
+      title,
+      description,
+      image_link: imageLink,
+      live_url: liveURL,
+      github_url: githubURL,
+      roles_json: JSON.stringify(roles),
+      technologies_json: JSON.stringify(technologies),
+      order: getNextOrder(),
+    };
+
+    setSavingProject(true);
+    let result = await api.post("projects", { authIsRequired: true, body });
+    setSavingProject(false);
+    dispatch(addProject({ ...body, id: result.response.id }));
+    reset();
+    setAlertMessage("Project uploaded successfully");
+    setAlertActive(true);
   };
 
   return (
@@ -32,9 +99,16 @@ function Project() {
             <Input value={title} setValue={setTitle} type="text" />
           </div>
           <div className={`${style.input_group} ${style.image_container}`}>
-            <p>Image</p>
+            <p>Image:</p>
+            {imageLoading && <Loading height={"70px"} />}
+            {imageLink && !imageLoading && <img src={imageLink} alt={title} />}
             <label htmlFor="image">Upload Image</label>
-            <input type="file" name="image" id="image" />
+            <input
+              onChange={handleImageUpload}
+              type="file"
+              name="image"
+              id="image"
+            />
           </div>
           <div className={style.input_group}>
             <p>Roles:</p>
@@ -75,7 +149,14 @@ function Project() {
           </div>
         </section>
       </div>
-      <Button>SAVE CHANGES</Button>
+      <Button onClick={handleSubmit} disabled={savingProject}>
+        {savingProject ? <Loading height={"24px"} /> : "SAVE CHANGES"}
+      </Button>
+      <Alert
+        active={alertActive}
+        setActive={setAlertActive}
+        message={alertMessage}
+      />
     </section>
   );
 }

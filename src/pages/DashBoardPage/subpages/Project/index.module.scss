@@ -1,6 +1,7 @@
 .project {
   padding: 60px 100px;
   color: #b9b9cb;
+  position: relative;
 
   .grid {
     display: grid;
@@ -40,6 +41,7 @@
   .image_container {
     img {
       width: 100%;
+      margin-bottom: 15px;
     }
 
     input {
