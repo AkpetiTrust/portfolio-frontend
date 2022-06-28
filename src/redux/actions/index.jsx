@@ -8,6 +8,7 @@ import { initializeState } from "./initializeState";
 import { toggleLoading } from "./toggleLoading";
 import { setCurrently } from "./setCurrently";
 import { addProject } from "./addProject";
+import { updateProject } from "./updateProject";
 
 export {
   selectMessage,
@@ -20,4 +21,5 @@ export {
   toggleLoading,
   setCurrently,
   addProject,
+  updateProject,
 };

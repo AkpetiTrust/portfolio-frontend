@@ -55,5 +55,13 @@ export const projectsReducer = (state = [], action) => {
     return [...state, action.payload];
   }
 
+  if (action.type === "UPDATE_PROJECT") {
+    return [...state].map((project) =>
+      project.id == action.payload.id
+        ? { ...action.payload.body, id: action.payload.id }
+        : project
+    );
+  }
+
   return state;
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import {
@@ -10,7 +10,10 @@ import {
   Loading,
 } from "../../../../components";
 import { api } from "../../../../constants";
-import { addProject } from "../../../../redux/actions";
+import {
+  addProject,
+  updateProject as updateProjectAction,
+} from "../../../../redux/actions";
 import { uploadFile } from "../../../../utils/functions";
 import style from "./index.module.css";
 
@@ -23,8 +26,10 @@ function Project() {
   const [liveURL, setLiveURL] = useState("");
   const [githubURL, setGithubURL] = useState("");
   const [imageLink, setImageLink] = useState("");
+  const [order, setOrder] = useState(0);
   const [imageLoading, setImageLoading] = useState(false);
   const [savingProject, setSavingProject] = useState(false);
+  const [pageLoading, setPageLoading] = useState(true);
 
   const [alertActive, setAlertActive] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
@@ -33,6 +38,26 @@ function Project() {
   const dispatch = useDispatch();
 
   const { id } = useParams();
+
+  useEffect(() => {
+    if (id) {
+      api.get(`projects/${id}`, true).then(({ response }) => {
+        setFeatured(response.is_featured);
+        setRoles(JSON.parse(response.roles_json));
+        setTechnologies(JSON.parse(response.technologies_json));
+        setTitle(response.title);
+        setDescription(response.description);
+        setLiveURL(response.live_url);
+        setGithubURL(response.github_url);
+        setImageLink(response.image_link);
+        setOrder(response.order);
+
+        setPageLoading(false);
+      });
+    } else {
+      setPageLoading(false);
+    }
+  }, []);
 
   const getNextOrder = () => {
     let sortedProjects = [...projects].sort((a, b) => a.order - b.order);
@@ -50,6 +75,7 @@ function Project() {
 
   const handleSubmit = () => {
     if (id) {
+      updateProject();
     } else {
       uploadNewProject();
     }
@@ -89,6 +115,36 @@ function Project() {
     setAlertMessage("Project uploaded successfully");
     setAlertActive(true);
   };
+
+  const updateProject = async () => {
+    if (!title || !description || !imageLink || !liveURL) return;
+
+    let body = {
+      is_featured: featured,
+      title,
+      description,
+      image_link: imageLink,
+      live_url: liveURL,
+      github_url: githubURL,
+      roles_json: JSON.stringify(roles),
+      technologies_json: JSON.stringify(technologies),
+      order,
+    };
+
+    setSavingProject(true);
+    await api.post(`projects/${id}`, {
+      authIsRequired: true,
+      body,
+    });
+    setSavingProject(false);
+    dispatch(updateProjectAction(id, body));
+    setAlertMessage("Project updated successfully");
+    setAlertActive(true);
+  };
+
+  if (pageLoading) {
+    return <Loading height={"100vh"} />;
+  }
 
   return (
     <section className={style.project}>

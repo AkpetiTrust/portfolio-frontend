@@ -1,13 +1,38 @@
-import React from "react";
-import { Button, CheckBox, SortableList, Table } from "../../../../components";
+import React, { useState } from "react";
+import {
+  Button,
+  CheckBox,
+  Loading,
+  SortableList,
+  Table,
+} from "../../../../components";
 import style from "./index.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleFeatured } from "../../../../redux/actions";
 import { Link } from "react-router-dom";
+import { api } from "../../../../constants";
 
 function Projects() {
   const projects = useSelector((state) => state.projects);
   const dispatch = useDispatch();
+  const [changesAreSaving, setChangesAreSaving] = useState(false);
+
+  const handleClick = () => {
+    setChangesAreSaving(true);
+    let ids_to_order = {};
+    projects.forEach(({ id, order }) => {
+      ids_to_order[id] = order;
+    });
+    api
+      .post("reorder-projects", {
+        authIsRequired: true,
+        body: { ids_to_order },
+      })
+      .then((result) => {
+        console.log(result);
+        setChangesAreSaving(false);
+      });
+  };
 
   return (
     <section className={style.projects}>
@@ -64,7 +89,10 @@ function Projects() {
           </tbody>
         </Table>
         <Button to={"/dashboard/project"}>NEW PROJECT</Button>
-        <Button>SAVE CHANGES</Button>
+        <Button disabled={changesAreSaving} onClick={handleClick}>
+          {" "}
+          {changesAreSaving ? <Loading height={"16px"} /> : "SAVE CHANGES"}
+        </Button>
       </section>
     </section>
   );
