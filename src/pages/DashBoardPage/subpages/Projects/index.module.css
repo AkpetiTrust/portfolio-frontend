@@ -89,4 +89,13 @@
   font-size: 11px;
   width: 40%;
 }
+
+.projects section:nth-child(2) h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
 /*# sourceMappingURL=index.module.css.map */

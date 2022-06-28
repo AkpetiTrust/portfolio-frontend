@@ -3,6 +3,7 @@ import {
   Button,
   CheckBox,
   Loading,
+  Saving,
   SortableList,
   Table,
 } from "../../../../components";
@@ -16,6 +17,7 @@ function Projects() {
   const projects = useSelector((state) => state.projects);
   const dispatch = useDispatch();
   const [changesAreSaving, setChangesAreSaving] = useState(false);
+  const [idsBeingToggled, setIdsBeingToggled] = useState([]);
 
   const handleClick = () => {
     setChangesAreSaving(true);
@@ -41,7 +43,7 @@ function Projects() {
         <SortableList className={style.featured} />
       </section>
       <section>
-        <h3>All Projects</h3>
+        <h3>All Projects {!!idsBeingToggled.length && <Saving />}</h3>
         <Table>
           <thead>
             <tr>
@@ -63,9 +65,22 @@ function Projects() {
                       id={project.id}
                       checked={project.is_featured}
                       onChange={(e) => {
-                        dispatch(
-                          toggleFeatured(project.id, e.currentTarget.checked)
-                        );
+                        let featured = e.currentTarget.checked;
+                        dispatch(toggleFeatured(project.id, featured));
+                        setIdsBeingToggled((prevValue) => [
+                          ...prevValue,
+                          project.id,
+                        ]);
+                        api
+                          .post(`update-featured/${project.id}`, {
+                            authIsRequired: true,
+                            body: { is_featured: featured },
+                          })
+                          .then(() => {
+                            setIdsBeingToggled((prevValue) =>
+                              prevValue.filter((id) => id !== project.id)
+                            );
+                          });
                       }}
                     />
                     <button>

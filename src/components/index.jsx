@@ -8,6 +8,7 @@ import FeaturedProject from "./FeaturedProject/FeaturedProject";
 import SortableList from "./SortableList/SortableList";
 import Loading from "./Loading/Loading";
 import Alert from "./Alert/Alert";
+import Saving from "./Saving/Saving";
 
 export {
   SideNav,
@@ -20,4 +21,5 @@ export {
   SortableList,
   Loading,
   Alert,
+  Saving,
 };
