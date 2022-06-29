@@ -1,0 +1,44 @@
+.message {
+  position: absolute;
+  --top: 90px;
+  top: var(--top);
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(calc(-1 * (var(--top) + 100%)));
+          transform: translateX(-50%) translateY(calc(-1 * (var(--top) + 100%)));
+  background-color: #2c2c3a;
+  border-radius: 6px;
+  padding: 20px 25px;
+  padding-top: 35px;
+  color: #fff;
+  width: 350px;
+  -webkit-animation: goDown 0.25s forwards;
+          animation: goDown 0.25s forwards;
+}
+
+.message .name {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.message svg {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 16px;
+  cursor: pointer;
+}
+
+@-webkit-keyframes goDown {
+  to {
+    -webkit-transform: translateX(-50%) translateY(0);
+            transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes goDown {
+  to {
+    -webkit-transform: translateX(-50%) translateY(0);
+            transform: translateX(-50%) translateY(0);
+  }
+}
+/*# sourceMappingURL=index.module.css.map */

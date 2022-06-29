@@ -9,6 +9,8 @@ import SortableList from "./SortableList/SortableList";
 import Loading from "./Loading/Loading";
 import Alert from "./Alert/Alert";
 import Saving from "./Saving/Saving";
+import Popup from "./Popup/Popup";
+import Message from "./Message/Message";
 
 export {
   SideNav,
@@ -22,4 +24,6 @@ export {
   Loading,
   Alert,
   Saving,
+  Popup,
+  Message,
 };

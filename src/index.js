@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { DashBoardPage, Login } from "./pages";
+import { DashBoardPage, Login, Logout } from "./pages";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import store from "./redux/store";
 import { Provider } from "react-redux";
@@ -14,6 +14,7 @@ root.render(
         <Routes>
           <Route path="/dashboard" exact element={<DashBoardPage />} />
           <Route path="/" exact element={<Login />} />
+          <Route path="/logout" exact element={<Logout />} />
           <Route
             path="/dashboard/:component"
             exact

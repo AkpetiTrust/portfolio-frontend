@@ -38,5 +38,6 @@ body {
 .dashboard > section {
   height: 100vh;
   overflow: auto;
+  position: relative;
 }
 /*# sourceMappingURL=index.css.map */
