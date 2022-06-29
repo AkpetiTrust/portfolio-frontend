@@ -6,7 +6,7 @@ import FeaturedProject from "../FeaturedProject/FeaturedProject";
 import withScrolling from "react-dnd-scrolling";
 import { Flipper } from "react-flip-toolkit";
 
-function SortableList({ className }) {
+function SortableList({ className, updateFeatured }) {
   const projects = useSelector((state) => state.projects);
   let orderString = "";
   projects
@@ -25,7 +25,11 @@ function SortableList({ className }) {
             .filter((project) => project.is_featured)
             .sort((a, b) => a.order - b.order)
             .map((project) => (
-              <FeaturedProject project={project} key={project.order} />
+              <FeaturedProject
+                updateFeatured={updateFeatured}
+                project={project}
+                key={project.order}
+              />
             ))}
         </Ul>
       </Flipper>

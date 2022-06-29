@@ -1,0 +1,36 @@
+.option {
+  position: relative;
+  color: #fff;
+
+  button {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .option_inner {
+    position: absolute;
+    left: 10px;
+    top: 100%;
+    border-radius: 5px;
+    background-color: #424257;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 13px;
+    padding: 5px 8px;
+    display: none;
+
+    &.active {
+      display: flex;
+    }
+
+    p {
+      cursor: pointer;
+    }
+  }
+}

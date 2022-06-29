@@ -1,0 +1,53 @@
+.option {
+  position: relative;
+  color: #fff;
+}
+
+.option button {
+  all: unset;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.option .option_inner {
+  position: absolute;
+  left: 10px;
+  top: 100%;
+  border-radius: 5px;
+  background-color: #424257;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  font-size: 13px;
+  padding: 5px 8px;
+  display: none;
+}
+
+.option .option_inner.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.option .option_inner p {
+  cursor: pointer;
+}
+/*# sourceMappingURL=index.module.css.map */

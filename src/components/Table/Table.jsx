@@ -1,9 +1,9 @@
 import React from "react";
 import style from "./index.module.css";
 
-function Table({ children }) {
+function Table({ children, responsive = true }) {
   return (
-    <div className={style.responsive}>
+    <div className={`${responsive ? style.responsive : ""}`}>
       <table className={style.table}>{children}</table>
     </div>
   );

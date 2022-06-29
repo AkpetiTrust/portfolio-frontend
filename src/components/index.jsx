@@ -11,6 +11,7 @@ import Alert from "./Alert/Alert";
 import Saving from "./Saving/Saving";
 import Popup from "./Popup/Popup";
 import Message from "./Message/Message";
+import Option from "./Option/Option";
 
 export {
   SideNav,
@@ -26,4 +27,5 @@ export {
   Saving,
   Popup,
   Message,
+  Option,
 };
