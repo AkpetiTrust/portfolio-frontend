@@ -9,6 +9,7 @@ import { toggleLoading } from "./toggleLoading";
 import { setCurrently } from "./setCurrently";
 import { addProject } from "./addProject";
 import { updateProject } from "./updateProject";
+import { deleteProject } from "./deleteProject";
 
 export {
   selectMessage,
@@ -22,4 +23,5 @@ export {
   setCurrently,
   addProject,
   updateProject,
+  deleteProject,
 };

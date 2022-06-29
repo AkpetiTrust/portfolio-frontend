@@ -1,0 +1,44 @@
+.delete {
+  position: absolute;
+  --top: 90px;
+  top: var(--top);
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(calc(-1 * (var(--top) + 100%)));
+          transform: translateX(-50%) translateY(calc(-1 * (var(--top) + 100%)));
+  background-color: #2c2c3a;
+  border-radius: 6px;
+  padding: 20px 25px;
+  padding-bottom: 30px;
+  color: #fff;
+  width: 350px;
+  -webkit-animation: goDown 0.25s forwards;
+          animation: goDown 0.25s forwards;
+}
+
+.delete .title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.delete p {
+  margin-bottom: 15px;
+}
+
+.delete p:nth-child(2) {
+  margin-bottom: 20px;
+}
+
+@-webkit-keyframes goDown {
+  to {
+    -webkit-transform: translateX(-50%) translateY(0);
+            transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes goDown {
+  to {
+    -webkit-transform: translateX(-50%) translateY(0);
+            transform: translateX(-50%) translateY(0);
+  }
+}
+/*# sourceMappingURL=index.module.css.map */

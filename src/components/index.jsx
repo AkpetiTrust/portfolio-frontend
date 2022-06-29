@@ -12,6 +12,7 @@ import Saving from "./Saving/Saving";
 import Popup from "./Popup/Popup";
 import Message from "./Message/Message";
 import Option from "./Option/Option";
+import DeleteProject from "./DeleteProject/DeleteProject";
 
 export {
   SideNav,
@@ -28,4 +29,5 @@ export {
   Popup,
   Message,
   Option,
+  DeleteProject,
 };

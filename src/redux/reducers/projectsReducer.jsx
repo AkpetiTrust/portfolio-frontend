@@ -63,5 +63,9 @@ export const projectsReducer = (state = [], action) => {
     );
   }
 
+  if (action.type === "DELETE_PROJECT") {
+    return state.filter((project) => project.id !== action.payload.id);
+  }
+
   return state;
 };

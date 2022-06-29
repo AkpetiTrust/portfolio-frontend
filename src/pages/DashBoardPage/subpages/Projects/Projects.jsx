@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import {
   Button,
   CheckBox,
+  DeleteProject,
   Loading,
   Option,
+  Popup,
   Saving,
   SortableList,
   Table,
 } from "../../../../components";
 import style from "./index.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleFeatured } from "../../../../redux/actions";
+import { deleteProject, toggleFeatured } from "../../../../redux/actions";
 import { Link } from "react-router-dom";
 import { api } from "../../../../constants";
 
@@ -19,6 +21,9 @@ function Projects() {
   const dispatch = useDispatch();
   const [changesAreSaving, setChangesAreSaving] = useState(false);
   const [idsBeingToggled, setIdsBeingToggled] = useState([]);
+  const [idToDelete, setIdToDelete] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+  const [popupActive, setPopupActive] = useState(false);
 
   const handleClick = () => {
     setChangesAreSaving(true);
@@ -49,6 +54,15 @@ function Projects() {
           prevValue.filter((value) => value !== id)
         );
       });
+  };
+
+  const deleteMessage = () => {
+    setDeleting(true);
+    api.delete(`projects/${idToDelete}`).then((result) => {
+      setDeleting(false);
+      dispatch(deleteProject(idToDelete));
+      setPopupActive(false);
+    });
   };
 
   return (
@@ -92,7 +106,8 @@ function Projects() {
                         {
                           text: "Delete",
                           action: () => {
-                            console.log("Hey");
+                            setIdToDelete(project.id);
+                            setPopupActive(true);
                           },
                         },
                       ]}
@@ -109,6 +124,11 @@ function Projects() {
           {changesAreSaving ? <Loading height={"16px"} /> : "SAVE CHANGES"}
         </Button>
       </section>
+      {popupActive && (
+        <Popup setPopupActive={setPopupActive}>
+          <DeleteProject onClick={deleteMessage} deleting={deleting} />
+        </Popup>
+      )}
     </section>
   );
 }

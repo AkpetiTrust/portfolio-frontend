@@ -1,0 +1,32 @@
+.delete {
+  position: absolute;
+  --top: 90px;
+  top: var(--top);
+  left: 50%;
+  transform: translateX(-50%) translateY(calc(-1 * (var(--top) + 100%)));
+  background-color: #2c2c3a;
+  border-radius: 6px;
+  padding: 20px 25px;
+  padding-bottom: 30px;
+  color: #fff;
+  width: 350px;
+  animation: goDown 0.25s forwards;
+
+  .title {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  p {
+    margin-bottom: 15px;
+    &:nth-child(2) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@keyframes goDown {
+  to {
+    transform: translateX(-50%) translateY(0);
+  }
+}
