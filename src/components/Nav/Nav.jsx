@@ -94,27 +94,27 @@ function Nav() {
           </Link>
         </li>
         <li>
-          <NavLink setActive={setActive} href="#about">
+          <NavLink setActive={setActive} href="/#about">
             ABOUT
           </NavLink>
         </li>
         <li>
-          <NavLink setActive={setActive} href="#services">
+          <NavLink setActive={setActive} href="/#services">
             SERVICES
           </NavLink>
         </li>
         <li>
-          <NavLink setActive={setActive} href="#stack">
+          <NavLink setActive={setActive} href="/#stack">
             STACK
           </NavLink>
         </li>
         <li>
-          <NavLink setActive={setActive} href="#projects">
+          <NavLink setActive={setActive} href="/#projects">
             PROJECTS
           </NavLink>
         </li>
         <li>
-          <NavLink setActive={setActive} href="#contact">
+          <NavLink setActive={setActive} href="/#contact">
             CONTACT
           </NavLink>
         </li>
