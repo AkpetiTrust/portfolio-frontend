@@ -1,8 +1,17 @@
 import React from "react";
+import Image from "../Image/Image";
 import style from "./index.module.css";
 
 function Project({
-  project: { img, title, live, github, description, technologies, roles },
+  project: {
+    image_link,
+    title,
+    live_url,
+    github_url,
+    description,
+    technologies,
+    roles,
+  },
   index,
 }) {
   const toTwoDigits = (number) => {
@@ -15,7 +24,7 @@ function Project({
       <section className={style.top}>
         <p>{title}</p>
         <div className={style.icons}>
-          <a href={github} target="_blank">
+          <a href={github_url} target="_blank">
             <svg
               width="27"
               height="26"
@@ -43,7 +52,7 @@ function Project({
               </defs>
             </svg>
           </a>
-          <a href={live} target="_blank">
+          <a href={live_url} target="_blank">
             <svg
               width="26"
               height="26"
@@ -61,7 +70,7 @@ function Project({
           </a>
         </div>
       </section>
-      <a href={live} className={style.image} target="_blank">
+      <a href={live_url} className={style.image} target="_blank">
         <svg
           width="46"
           height="46"
@@ -85,7 +94,7 @@ function Project({
           />
         </svg>
 
-        <img src={img} alt={title} />
+        <Image src={image_link} alt={title} />
       </a>
       <section className={style.description}>
         <p>{description}</p>

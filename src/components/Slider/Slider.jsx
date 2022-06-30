@@ -63,7 +63,7 @@ function Slider() {
       >
         <defs>
           <linearGradient
-            id="a"
+            id="a_1"
             gradientUnits="userSpaceOnUse"
             x1={281.1}
             y1={16.4}
@@ -86,9 +86,9 @@ function Slider() {
             />
           </linearGradient>
           <linearGradient
-            id="b"
+            id="b_1"
             gradientUnits="userSpaceOnUse"
-            xlinkHref="#a"
+            xlinkHref="#a_1"
             x1={281.1}
             y1={16.4}
             x2={521.2}
@@ -98,13 +98,13 @@ function Slider() {
         <path
           d="m678 520.2-58.3-384.6h151.9V0H376.9C458 139.6 597.3 380.3 678.1 520.2z"
           style={{
-            fill: "url(#b)",
+            fill: "url(#b_1)",
           }}
         />
         <path
           d="m300.4 1.4 150.2 260.2 150.2 260.2H0l150.2-260.2L300.4 1.4zm0 216.1 25.5 44.1 25.5 44.1H249.6l25.5-44.1 25.5-44.1z"
           style={{
-            fill: "url(#a)",
+            fill: "url(#a_1)",
           }}
         />
       </svg>

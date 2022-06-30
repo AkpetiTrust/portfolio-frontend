@@ -35,8 +35,14 @@ function Projects() {
 
   useEffect(() => {
     api.get("projects/featured").then((result) => {
-      setProjects(result.response);
-      // setLoading(false);
+      setProjects(
+        result.response.map((project) => ({
+          ...project,
+          roles: JSON.parse(project.roles_json),
+          technologies: JSON.parse(project.technologies_json),
+        }))
+      );
+      setLoading(false);
     });
   }, []);
 
