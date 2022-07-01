@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Nav, Tag } from "../../components";
+import { ArchivedProjectSkeleton, Nav, Tag } from "../../components";
 import ArchivedProject from "../../components/ArchivedProject/ArchivedProject";
 import { api } from "../../constants";
 import style from "./index.module.css";
@@ -68,6 +68,16 @@ function Archive() {
         </div>
 
         <Flipper className={style.projects} flipKey={activeFilter}>
+          {loading && (
+            <>
+              <ArchivedProjectSkeleton />
+              <ArchivedProjectSkeleton />
+              <ArchivedProjectSkeleton />
+              <ArchivedProjectSkeleton />
+              <ArchivedProjectSkeleton />
+            </>
+          )}
+
           {projects
             .filter(
               (project) =>

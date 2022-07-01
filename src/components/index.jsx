@@ -8,6 +8,7 @@ import Footer from "./Footer/Footer";
 import Preloader from "./Preloader/Preloader";
 import Nav from "./Nav/Nav";
 import Tag from "./Tag/Tag";
+import ArchivedProjectSkeleton from "./ArchivedProjectSkeleton/ArchivedProjectSkeleton";
 
 export {
   Hero,
@@ -20,4 +21,5 @@ export {
   Preloader,
   Nav,
   Tag,
+  ArchivedProjectSkeleton,
 };

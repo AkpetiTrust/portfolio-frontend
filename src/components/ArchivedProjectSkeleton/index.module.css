@@ -1,0 +1,15 @@
+.skeleton {
+  background-color: #272734;
+  border-radius: 5px;
+  padding: 15px 18px;
+}
+
+.skeleton > div:nth-child(2) {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.skeleton > div:last-child {
+  width: 40%;
+}
+/*# sourceMappingURL=index.module.css.map */
