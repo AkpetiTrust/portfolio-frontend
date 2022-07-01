@@ -44,6 +44,14 @@
       }
     }
   }
+
+  .position {
+    position: absolute;
+    left: 30px;
+    bottom: 0;
+    transform: translateY(50%);
+    width: 220px;
+  }
 }
 
 @media screen and(max-width:900px) {
@@ -55,6 +63,10 @@
     .grid {
       grid-template-columns: 1fr;
       row-gap: 100px;
+    }
+
+    .position {
+      display: none;
     }
   }
 }
