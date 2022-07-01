@@ -1,1 +1,21 @@
-/* No CSS *//*# sourceMappingURL=index.module.css.map */
+.archive {
+  background-color: #181820;
+  padding: 40px 70px;
+}
+
+.archive .inner {
+  padding: 0 140px;
+  margin-top: 70px;
+}
+
+.archive .inner .talk h1 {
+  color: #fff;
+  font-size: 27px;
+  margin-bottom: 7px;
+}
+
+.archive .inner .talk p {
+  color: #c5c5d3;
+  font-size: 15px;
+}
+/*# sourceMappingURL=index.module.css.map */

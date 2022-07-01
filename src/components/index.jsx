@@ -6,5 +6,18 @@ import Projects from "./Projects/Projects";
 import Contact from "./Contact/Contact";
 import Footer from "./Footer/Footer";
 import Preloader from "./Preloader/Preloader";
+import Nav from "./Nav/Nav";
+import Tag from "./Tag/Tag";
 
-export { Hero, About, Services, Stack, Projects, Contact, Footer, Preloader };
+export {
+  Hero,
+  About,
+  Services,
+  Stack,
+  Projects,
+  Contact,
+  Footer,
+  Preloader,
+  Nav,
+  Tag,
+};

@@ -1,0 +1,22 @@
+.archive {
+  background-color: #181820;
+  padding: 40px 70px;
+
+  .inner {
+    padding: 0 140px;
+    margin-top: 70px;
+
+    .talk {
+      h1 {
+        color: #fff;
+        font-size: 27px;
+        margin-bottom: 7px;
+      }
+
+      p {
+        color: #c5c5d3;
+        font-size: 15px;
+      }
+    }
+  }
+}
