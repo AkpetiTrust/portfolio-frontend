@@ -1,6 +1,10 @@
 .archive {
   background-color: #181820;
   padding: 40px 70px;
+  padding-bottom: 100px;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
 
   .inner {
     padding: 0 140px;
@@ -11,6 +15,17 @@
         color: #fff;
         font-size: 27px;
         margin-bottom: 7px;
+
+        span {
+          position: relative;
+
+          svg {
+            position: absolute;
+            left: 1.5ch;
+            bottom: 100%;
+            width: 60%;
+          }
+        }
       }
 
       p {
@@ -18,5 +33,34 @@
         font-size: 15px;
       }
     }
+
+    .tags {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 25px;
+      margin-top: 50px;
+      overflow: auto;
+    }
+
+    .projects {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 60px;
+      row-gap: 70px;
+    }
+  }
+
+  .watermark {
+    position: absolute;
+    left: -30px;
+    font-size: 100px;
+    color: #1d1d26;
+    font-weight: 700;
+    width: 500px;
+    line-height: 1em;
+    top: 195px;
+    z-index: -1;
   }
 }

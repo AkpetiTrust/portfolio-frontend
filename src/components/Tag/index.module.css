@@ -1,1 +1,20 @@
-/* No CSS *//*# sourceMappingURL=index.module.css.map */
+.tag {
+  font-size: 14px;
+  display: inline-block;
+  padding: 6px 20px;
+  text-align: center;
+  border: 1px solid #303040;
+  border-radius: 50px;
+  color: #fff;
+  min-width: 80px;
+  cursor: pointer;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.tag.active {
+  font-weight: 600;
+  background-color: #303040;
+  border: none;
+}
+/*# sourceMappingURL=index.module.css.map */
