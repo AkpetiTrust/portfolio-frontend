@@ -27,9 +27,10 @@ function About() {
           <p className="about-talk">
             My name is <em>Akpeti Trust</em> and I'm a{" "}
             <em>full stack software developer</em>. I enjoy designing and
-            building beautiful products, which could be anything from web apps
-            to native apps. I deliver software that scales using frameworks like
-            React and Laravel. I'm always learning.
+            building beautiful products, which could be anything from a web app
+            to a native app. Delivering scalable software is what I do. React
+            and Laravel are some of the technologies that make up my toolbox,
+            and one of my cardinal qualities is my readiness to learn.
           </p>
         </section>
         <Slider />

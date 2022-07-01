@@ -7,7 +7,7 @@ function ServicesSlider() {
   const [services, setServices] = useState([
     {
       title: "Front-end web development",
-      body: "I build blazing fast web applications with modern technologies like React JS and SCSS. I deliver accessible products by using proper semantics in my work, I also design clean user interfaces with tools like Figma.",
+      body: "I build blazing fast web applications with modern technologies like React JS and SCSS. Accessibility is my major concern when delivering products, so I ensure to use proper semantics in my work. Included in my skill set is designing clean user interfaces with tools like Figma.",
     },
     {
       title: "Native app development",
@@ -15,7 +15,7 @@ function ServicesSlider() {
     },
     {
       title: "Back-end development",
-      body: "I provide maintainable solutions to server-side problems. I use the latest stack like Laravel, and good database architecture like PostgreSQL. Poor database structures are usually costly to an organization, but you don't have to worry about that with me.",
+      body: "I provide maintainable solutions to server-side problems using the latest stack like Laravel, and good database architecture like PostgreSQL. Poor database structures are usually costly to an organization, but you don't have to worry about that with me.",
     },
   ]);
 
