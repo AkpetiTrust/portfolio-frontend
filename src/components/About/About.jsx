@@ -5,7 +5,7 @@ import Slider from "../Slider/Slider";
 function About() {
   return (
     <section className="about" id="about">
-      <div className="grid">
+      <div className="grid" data-aos="fade-up">
         <section>
           <SectionHeading>
             ΔBOUT{" "}

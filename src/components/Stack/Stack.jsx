@@ -143,7 +143,7 @@ function Stack() {
   return (
     <section className="stack" id="stack">
       <div className="grid">
-        <section className="talk">
+        <section className="talk" data-aos="fade-right">
           <SectionHeading>
             STΔCK{" "}
             <svg

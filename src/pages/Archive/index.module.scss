@@ -42,6 +42,10 @@
       column-gap: 25px;
       margin-top: 50px;
       overflow: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     .projects {
@@ -97,6 +101,7 @@
 
     .projects {
       grid-template-columns: 1fr;
+      margin-top: 50px;
     }
   }
 }

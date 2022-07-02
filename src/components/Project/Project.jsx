@@ -20,7 +20,11 @@ function Project({
   };
 
   return (
-    <div className={style.project} data-index={toTwoDigits(index + 1)}>
+    <div
+      className={style.project}
+      data-index={toTwoDigits(index + 1)}
+      data-aos="zoom-in"
+    >
       <section className={style.top}>
         <p>{title}</p>
         <div className={style.icons}>
