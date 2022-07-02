@@ -20,7 +20,7 @@ function Hero() {
             in Nigeria, I enjoy solving problems by building applications.
             Welcome to my small corner of the Internet.
           </p>
-          <Button>SEE MY WORK</Button>
+          <Button href={"#projects"}>SEE MY WORK</Button>
         </div>
         <div className="image">
           <figure>

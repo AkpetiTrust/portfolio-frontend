@@ -6,9 +6,10 @@ function Info({ icon, children, item, setMessage, setAlertActive }) {
     <div
       className={style.info}
       onClick={() => {
-        navigator.clipboard.writeText(children).then(() => {});
-        setMessage(`${item} has been copied`);
-        setAlertActive(true);
+        navigator.clipboard.writeText(children).then(() => {
+          setMessage(`${item} has been copied`);
+          setAlertActive(true);
+        });
       }}
     >
       {icon}

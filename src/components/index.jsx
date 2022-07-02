@@ -9,6 +9,8 @@ import Preloader from "./Preloader/Preloader";
 import Nav from "./Nav/Nav";
 import Tag from "./Tag/Tag";
 import ArchivedProjectSkeleton from "./ArchivedProjectSkeleton/ArchivedProjectSkeleton";
+import Robot from "./Robot/Robot";
+import Button from "./Button/Button";
 
 export {
   Hero,
@@ -22,4 +24,6 @@ export {
   Nav,
   Tag,
   ArchivedProjectSkeleton,
+  Robot,
+  Button,
 };

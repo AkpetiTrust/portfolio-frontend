@@ -8,16 +8,25 @@ function Button({
   children,
   isLink,
   to,
+  href,
   className,
   ...props
 }) {
-  const ContainerComponent = isLink
+  let ContainerComponent = isLink
     ? (props) => (
         <Link to={to} {...props}>
           {props.children}
         </Link>
       )
     : (props) => <button {...props}>{props.children}</button>;
+
+  if (href) {
+    ContainerComponent = (props) => (
+      <a href={href} {...props}>
+        {props.children}
+      </a>
+    );
+  }
 
   return (
     <ContainerComponent
