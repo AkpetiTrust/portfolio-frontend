@@ -1,9 +1,128 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
 
 .error {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  --padding: 70px;
+
+  .logo {
+    position: absolute;
+    right: var(--padding);
+    top: 50px;
+    svg {
+      width: 60px;
+      height: auto;
+    }
+  }
+
   .talk {
+    background-color: #181820;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 25px;
+    padding: 0 var(--padding);
+    h1,
+    p,
+    a {
+      position: relative;
+      z-index: 2;
+    }
+
     h1 {
       font-family: "Bungee Shade", cursive;
+      color: #f0f0f4;
+      font-size: 100px;
+      font-weight: 400;
+      line-height: 1em;
+    }
+
+    p {
+      color: #fff;
+      white-space: pre-wrap;
+      max-width: 400px;
+
+      b {
+        word-spacing: 3px;
+      }
+    }
+
+    a {
+      width: 140px;
+      text-align: center;
+    }
+  }
+
+  .robot {
+    padding: 0 var(--padding);
+    background-image: linear-gradient(129.9deg, #484860 0.21%, #111117 97.35%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    svg {
+      max-width: 380px;
+    }
+  }
+}
+
+.circle {
+  position: absolute;
+  left: -20px;
+  bottom: -50px;
+  width: 300px;
+  height: auto;
+}
+
+@media screen and(max-width:890px) {
+  .error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(129.9deg, #484860 0.21%, #111117 97.35%);
+    padding: 35px;
+    row-gap: 40px;
+    padding-top: 80px;
+
+    .logo {
+      position: static;
+    }
+
+    .talk {
+      align-items: center;
+      a {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 60px;
+        width: max-content;
+      }
+      p {
+        font-size: 15px;
+      }
+    }
+
+    .talk,
+    .robot {
+      background-color: transparent;
+      background-image: none;
+      padding: 0;
+    }
+
+    .robot {
+      display: none;
+    }
+  }
+}
+
+@media screen and(max-width:760px) {
+  .error {
+    .circle {
+      display: none;
     }
   }
 }

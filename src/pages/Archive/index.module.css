@@ -76,6 +76,7 @@
   line-height: 1em;
   top: 195px;
   z-index: -1;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 1280px) {

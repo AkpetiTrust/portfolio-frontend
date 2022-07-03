@@ -1,0 +1,31 @@
+.light {
+  position: absolute;
+  left: -40px;
+  top: -200px;
+  -webkit-animation: rotate 10s linear infinite alternate;
+          animation: rotate 10s linear infinite alternate;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  z-index: 1;
+}
+
+@-webkit-keyframes rotate {
+  to {
+    -webkit-transform: rotate(80deg);
+            transform: rotate(80deg);
+  }
+}
+
+@keyframes rotate {
+  to {
+    -webkit-transform: rotate(80deg);
+            transform: rotate(80deg);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .light {
+    display: none;
+  }
+}
+/*# sourceMappingURL=index.module.css.map */

@@ -1,0 +1,20 @@
+.light {
+  position: absolute;
+  left: -40px;
+  top: -200px;
+  animation: rotate 10s linear infinite alternate;
+  transform-origin: left;
+  z-index: 1;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(80deg);
+  }
+}
+
+@media screen and(max-width:1000px) {
+  .light {
+    display: none;
+  }
+}

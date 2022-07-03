@@ -11,6 +11,7 @@ import Tag from "./Tag/Tag";
 import ArchivedProjectSkeleton from "./ArchivedProjectSkeleton/ArchivedProjectSkeleton";
 import Robot from "./Robot/Robot";
 import Button from "./Button/Button";
+import TorchLight from "./TorchLight/TorchLight";
 
 export {
   Hero,
@@ -26,4 +27,5 @@ export {
   ArchivedProjectSkeleton,
   Robot,
   Button,
+  TorchLight,
 };
