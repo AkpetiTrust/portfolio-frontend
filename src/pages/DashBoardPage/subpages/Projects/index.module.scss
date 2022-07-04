@@ -13,7 +13,7 @@
   }
 
   & > section {
-    height: calc(100vh - (2 * var(--vertical-padding)));
+    max-height: calc(100vh - (2 * var(--vertical-padding)));
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 30px;
@@ -68,5 +68,23 @@
       display: flex;
       justify-content: space-between;
     }
+  }
+}
+
+@media screen and(max-width:1000px) {
+  .projects {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+  }
+}
+
+@media screen and(max-width:650px) {
+  section.projects {
+    --vertical-padding: 80px;
+    padding: var(--vertical-padding) 30px;
+    padding-bottom: 60px;
+    height: unset;
+    background-color: #181820;
   }
 }

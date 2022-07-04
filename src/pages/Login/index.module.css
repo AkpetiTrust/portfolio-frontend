@@ -1,11 +1,13 @@
 .login {
   background-color: #181820;
   height: 100vh;
-  padding: 50px;
+  padding: 50px 25px;
   overflow: hidden;
   position: relative;
   background-image: url("../../assets/background.svg");
   background-size: contain;
+  position: relative;
+  z-index: 1;
 }
 
 .login > svg {
@@ -64,6 +66,7 @@
 
 .login .shapes svg {
   position: absolute;
+  z-index: -1;
 }
 
 .login .shapes svg.hexagon {
@@ -76,5 +79,11 @@
   bottom: -100px;
   right: -120px;
   width: 420px;
+}
+
+@media screen and (max-width: 500px) {
+  .login form {
+    padding: 30px 25px;
+  }
 }
 /*# sourceMappingURL=index.module.css.map */

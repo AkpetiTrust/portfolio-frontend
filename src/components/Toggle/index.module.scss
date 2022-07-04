@@ -1,0 +1,60 @@
+.toggle {
+  display: none;
+  position: fixed;
+  z-index: 5;
+  flex-direction: column;
+  gap: 6px;
+  width: 30px;
+  cursor: pointer;
+  flex-shrink: 0;
+  flex-grow: 0;
+  top: 30px;
+  left: 30px;
+
+  span,
+  &::before,
+  &::after {
+    background-color: #fff;
+    height: 3px;
+    display: inline-block;
+    transition: transform 0.4s;
+  }
+
+  span {
+    width: 100%;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    transform: scaleX(0.4);
+  }
+
+  &::before {
+    transform-origin: right;
+  }
+
+  &::after {
+    transform-origin: left;
+  }
+
+  &.active {
+    span {
+      transform: scaleX(0);
+    }
+
+    &::before {
+      transform: translate(-3px, 27px) scaleX(1) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(5px, 9px) scaleX(1) rotate(-45deg);
+    }
+  }
+}
+
+@media screen and(max-width:1220px) {
+  .toggle {
+    display: flex;
+  }
+}

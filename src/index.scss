@@ -38,3 +38,9 @@ body {
     position: relative;
   }
 }
+
+@media screen and(max-width:1220px) {
+  .dashboard {
+    display: block;
+  }
+}

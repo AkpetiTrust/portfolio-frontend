@@ -34,3 +34,20 @@
     }
   }
 }
+
+@media screen and(max-width:1220px) {
+  .nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 280px;
+    z-index: 4;
+    transition: transform 0.4s;
+    transform: translateX(-100%);
+
+    &.active {
+      transform: translateX(0);
+    }
+  }
+}

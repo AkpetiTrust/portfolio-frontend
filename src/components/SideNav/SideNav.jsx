@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import Logout from "../Logout/Logout";
 import NavItem from "../NavItem/NavItem";
+import Toggle from "../Toggle/Toggle";
 import style from "./index.module.css";
 
 function SideNav() {
@@ -87,6 +88,7 @@ function SideNav() {
       ),
     },
   ]);
+  const [active, setActive] = useState(false);
 
   const { component } = useParams();
   let translationIndex = navItems
@@ -100,81 +102,84 @@ function SideNav() {
   let gapOffset = translationIndex * 25 + "px";
 
   return (
-    <nav className={style.nav}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        xmlSpace="preserve"
-        width={267.318}
-        height={180.786}
-        style={{
-          shapeRendering: "geometricPrecision",
-          textRendering: "geometricPrecision",
-          imageRendering: "optimizeQuality",
-          fillRule: "evenodd",
-          clipRule: "evenodd",
-        }}
-        viewBox="0 0 771.5 521.8"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-      >
-        <defs>
-          <linearGradient
-            id="a"
-            gradientUnits="userSpaceOnUse"
-            x1={281.1}
-            y1={16.4}
-            x2={521.2}
-            y2={376.6}
-          >
-            <stop
-              offset={0}
-              style={{
-                stopOpacity: 1,
-                stopColor: "#7c99df",
-              }}
+    <>
+      <Toggle active={active} setActive={setActive} />
+      <nav className={`${style.nav} ${active ? style.active : ""}`}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlSpace="preserve"
+          width={267.318}
+          height={180.786}
+          style={{
+            shapeRendering: "geometricPrecision",
+            textRendering: "geometricPrecision",
+            imageRendering: "optimizeQuality",
+            fillRule: "evenodd",
+            clipRule: "evenodd",
+          }}
+          viewBox="0 0 771.5 521.8"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+        >
+          <defs>
+            <linearGradient
+              id="a"
+              gradientUnits="userSpaceOnUse"
+              x1={281.1}
+              y1={16.4}
+              x2={521.2}
+              y2={376.6}
+            >
+              <stop
+                offset={0}
+                style={{
+                  stopOpacity: 1,
+                  stopColor: "#7c99df",
+                }}
+              />
+              <stop
+                offset={1}
+                style={{
+                  stopOpacity: 1,
+                  stopColor: "#fffd77",
+                }}
+              />
+            </linearGradient>
+            <linearGradient
+              id="b"
+              gradientUnits="userSpaceOnUse"
+              xlinkHref="#a"
+              x1={281.1}
+              y1={16.4}
+              x2={521.2}
+              y2={376.6}
             />
-            <stop
-              offset={1}
-              style={{
-                stopOpacity: 1,
-                stopColor: "#fffd77",
-              }}
-            />
-          </linearGradient>
-          <linearGradient
-            id="b"
-            gradientUnits="userSpaceOnUse"
-            xlinkHref="#a"
-            x1={281.1}
-            y1={16.4}
-            x2={521.2}
-            y2={376.6}
+          </defs>
+          <path
+            d="m678 520.2-58.3-384.6h151.9V0H376.9C458 139.6 597.3 380.3 678.1 520.2z"
+            style={{
+              fill: "url(#b)",
+            }}
           />
-        </defs>
-        <path
-          d="m678 520.2-58.3-384.6h151.9V0H376.9C458 139.6 597.3 380.3 678.1 520.2z"
+          <path
+            d="m300.4 1.4 150.2 260.2 150.2 260.2H0l150.2-260.2L300.4 1.4zm0 216.1 25.5 44.1 25.5 44.1H249.6l25.5-44.1 25.5-44.1z"
+            style={{
+              fill: "url(#a)",
+            }}
+          />
+        </svg>
+        <ul
           style={{
-            fill: "url(#b)",
+            "--translate": translationIndex * 100 + "%",
+            "--gap-offset": gapOffset,
           }}
-        />
-        <path
-          d="m300.4 1.4 150.2 260.2 150.2 260.2H0l150.2-260.2L300.4 1.4zm0 216.1 25.5 44.1 25.5 44.1H249.6l25.5-44.1 25.5-44.1z"
-          style={{
-            fill: "url(#a)",
-          }}
-        />
-      </svg>
-      <ul
-        style={{
-          "--translate": translationIndex * 100 + "%",
-          "--gap-offset": gapOffset,
-        }}
-      >
-        {navItems.map(({ name, icon }) => (
-          <NavItem name={name} icon={icon} key={name} />
-        ))}
-      </ul>
-      <Logout />
-    </nav>
+        >
+          {navItems.map(({ name, icon }) => (
+            <NavItem setActive={setActive} name={name} icon={icon} key={name} />
+          ))}
+        </ul>
+        <Logout />
+      </nav>
+    </>
   );
 }
 

@@ -1,8 +1,9 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import NavLink from "../NavLink/NavLink";
 import style from "./index.module.css";
 
-function NavItem({ icon, name }) {
+function NavItem({ icon, name, setActive }) {
   const { component } = useParams();
   const active =
     name.toLowerCase() === component ||
@@ -12,7 +13,9 @@ function NavItem({ icon, name }) {
   return (
     <li className={`${style.item} ${active ? style.active : ""}`}>
       {icon}
-      <Link to={`/dashboard/${name.toLowerCase()}`}>{name}</Link>
+      <NavLink setActive={setActive} to={`/dashboard/${name.toLowerCase()}`}>
+        {name}
+      </NavLink>
     </li>
   );
 }

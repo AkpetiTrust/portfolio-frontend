@@ -1,0 +1,73 @@
+.toggle {
+  display: none;
+  position: fixed;
+  z-index: 5;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 6px;
+  width: 30px;
+  cursor: pointer;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  top: 30px;
+  left: 30px;
+}
+
+.toggle span, .toggle::before, .toggle::after {
+  background-color: #fff;
+  height: 3px;
+  display: inline-block;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+}
+
+.toggle span {
+  width: 100%;
+}
+
+.toggle::before, .toggle::after {
+  content: "";
+  -webkit-transform: scaleX(0.4);
+          transform: scaleX(0.4);
+}
+
+.toggle::before {
+  -webkit-transform-origin: right;
+          transform-origin: right;
+}
+
+.toggle::after {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.toggle.active span {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+
+.toggle.active::before {
+  -webkit-transform: translate(-3px, 27px) scaleX(1) rotate(45deg);
+          transform: translate(-3px, 27px) scaleX(1) rotate(45deg);
+}
+
+.toggle.active::after {
+  -webkit-transform: translate(5px, 9px) scaleX(1) rotate(-45deg);
+          transform: translate(5px, 9px) scaleX(1) rotate(-45deg);
+}
+
+@media screen and (max-width: 1220px) {
+  .toggle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+/*# sourceMappingURL=index.module.css.map */

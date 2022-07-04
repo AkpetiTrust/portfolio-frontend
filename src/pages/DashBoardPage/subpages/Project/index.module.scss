@@ -76,3 +76,25 @@
     margin-top: 60px;
   }
 }
+
+@media screen and(max-width:920px) {
+  .project {
+    padding: 80px 60px;
+
+    .grid {
+      column-gap: 80px;
+    }
+  }
+}
+
+@media screen and(max-width:775px) {
+  .project {
+    padding: 80px 30px;
+
+    .grid {
+      display: flex;
+      flex-direction: column;
+      row-gap: 60px;
+    }
+  }
+}

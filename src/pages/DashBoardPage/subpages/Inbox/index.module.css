@@ -21,4 +21,10 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
+@media screen and (max-width: 780px) {
+  .inbox {
+    padding: 80px 30px;
+  }
+}
 /*# sourceMappingURL=index.module.css.map */
