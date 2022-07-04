@@ -1,5 +1,5 @@
 export const api = {
-  url: "http://localhost:8000/api/",
+  url: "https://trusts-portfolio.up.railway.app/api/",
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
