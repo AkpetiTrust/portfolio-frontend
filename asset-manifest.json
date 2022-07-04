@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.493b4cb0.css",
+    "main.js": "/static/js/main.64434eb4.js",
+    "static/media/crypto.png": "/static/media/crypto.8e8e742832297a572d67.png",
+    "static/media/whot.png": "/static/media/whot.e6ce68c8f98def77823d.png",
+    "static/media/Causten-Regular.otf": "/static/media/Causten-Regular.0773a97f6dd99cf6f722.otf",
+    "index.html": "/index.html",
+    "main.493b4cb0.css.map": "/static/css/main.493b4cb0.css.map",
+    "main.64434eb4.js.map": "/static/js/main.64434eb4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.493b4cb0.css",
+    "static/js/main.64434eb4.js"
+  ]
+}
