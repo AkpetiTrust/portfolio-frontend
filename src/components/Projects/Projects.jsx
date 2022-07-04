@@ -9,28 +9,7 @@ import ProjectSkeleton from "../ProjectSkeleton/ProjectSkeleton";
 import { api } from "../../constants";
 
 function Projects() {
-  const [projects, setProjects] = useState([
-    {
-      img: whotImage,
-      title: "WHOT",
-      live: "https://whot.trust-akpeti.com",
-      github: "https://github.com/AkpetiTrust/whot",
-      description:
-        "A game of WHOT built with ReactJS. It's a game where you play against an AI. A multiplayer version is in development😗.",
-      technologies: ["React", "Redux"],
-      roles: ["UI Design", "Front-end"],
-    },
-    {
-      img: cryptoImage,
-      title: "EXCHANGE APP",
-      live: "https://exchange-app.trust-akpeti.com",
-      github: "https://github.com/AkpetiTrust/exchange_app",
-      description:
-        "A web app that shows the latest prices for various cryptocurrency coins. You can also convert the value of one coin to another, it was built using ReactJS.",
-      technologies: ["React"],
-      roles: ["UI Design", "Front-end"],
-    },
-  ]);
+  const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
